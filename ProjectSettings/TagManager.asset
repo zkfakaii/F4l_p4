@@ -5,11 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Unit
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Unit
   - Water
   - UI
   - 
