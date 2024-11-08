@@ -1,38 +1,39 @@
 using UnityEngine;
-using UnityEngine.UI;
 
-public class BotonInstanciador : MonoBehaviour
+public class BotonIniciador : MonoBehaviour
 {
-    public GameObject objetoAInstanciar; // El objeto que se va a instanciar
-    public Button boton;  // El botón que activa la acción
-    private MovimientoObjeto movimientoObjeto;
+    public GameObject unidadPrefab;                  // Prefab de la unidad a instanciar
+    public RequerimientosUnidad requerimientosUnidad; // Referencia al script RequerimientosUnidad
+    public MovimientoObjeto movimientoObjeto;        // Referencia al script que controla el movimiento de la unidad
+
+    private Button boton;                             // Referencia al botón (se obtiene desde el inspector)
 
     void Start()
     {
-        // Asignar la función al botón cuando se hace clic
-        if (boton != null)
-        {
-            boton.onClick.AddListener(OnBotonClick);
-        }
+        // Obtener el componente del botón
+        boton = GetComponent<Button>();
+        // Asegurarnos de que el botón solo funcione si hay suficiente Miel
+        boton.onClick.AddListener(IntentarInvocarUnidad);
     }
 
-    void Awake()
+    // Método para intentar invocar una unidad
+    public void IntentarInvocarUnidad()
     {
-        // Buscar el componente MovimientoObjeto en la escena (si es necesario)
-        movimientoObjeto = FindObjectOfType<MovimientoObjeto>();
-    }
-
-    // Método que se llama cuando se hace clic en el botón
-    void OnBotonClick()
-    {
-        // Si el objeto y el script están bien asignados
-        if (objetoAInstanciar != null && movimientoObjeto != null)
+        // Verificar si hay suficiente Miel para la unidad
+        if (requerimientosUnidad.PuedeInvocarUnidad())
         {
-            // Instanciar el objeto en la escena
-            GameObject objetoInstanciado = Instantiate(objetoAInstanciar);
+            // Instanciar la unidad en la posición inicial deseada (se podría modificar esto)
+            GameObject objetoInstanciado = Instantiate(unidadPrefab, transform.position, Quaternion.identity);
 
-            // Llamamos al método IniciarMovimiento para mover el objeto a la posición del ratón
+            // Llamar al método para iniciar el movimiento de la unidad
             movimientoObjeto.IniciarMovimiento(objetoInstanciado);
+
+            // Descontar Miel
+            requerimientosUnidad.DescontarMiel();
+        }
+        else
+        {
+            Debug.Log("No hay suficiente Miel para invocar la unidad.");
         }
     }
 }
