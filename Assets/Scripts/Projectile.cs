@@ -9,16 +9,16 @@ public class Projectile : MonoBehaviour
 
     void Update()
     {
-        // Movimiento constante hacia la derecha
-        transform.Translate(Vector2.right * speed * Time.deltaTime);
+        // Movimiento constante en la dirección en la que fue instanciado
+        transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter(Collider collision)
     {
         // Detectar colisión con enemigos
         if (collision.CompareTag("Enemy"))
         {
-            // Aquí podrías reducir la vida del enemigo
+            // Reducir la vida del enemigo
             EnemyHealth enemyHealth = collision.GetComponent<EnemyHealth>();
             if (enemyHealth != null)
             {
@@ -30,3 +30,4 @@ public class Projectile : MonoBehaviour
         }
     }
 }
+

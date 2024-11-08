@@ -15,13 +15,8 @@ public class EnemyAttack : MonoBehaviour
 
     void Start()
     {
-
-     animator = GetComponentInParent<Animator>();
-
+        animator = GetComponentInParent<Animator>();
     }
-
-
-
 
     void Update()
     {
@@ -31,21 +26,20 @@ public class EnemyAttack : MonoBehaviour
         // Si hay una unidad en rango, aplicar daño en tics
         if (targetUnit != null)
         {
-                animator.SetBool("atacando", true);
+            animator.SetBool("atacando", true);
             ApplyDamageOverTime();
         }
         else
         {
-           animator.SetBool("atacando", false);
+            animator.SetBool("atacando", false);
         }
-
     }
 
     private void DetectUnit()
     {
         // Revisar si hay colisiones en el rango de ataque con el tag "Unit"
-        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, attackRange, unitLayer);
-        
+        Collider[] hits = Physics.OverlapSphere(transform.position, attackRange, unitLayer);
+
         if (hits.Length > 0)
         {
             // Tomar la primera unidad detectada en el rango

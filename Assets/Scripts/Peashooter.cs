@@ -25,7 +25,7 @@ public class Peashooter : MonoBehaviour
 
     private void Shoot()
     {
-        // Instanciar el proyectil en el punto de disparo
-        Instantiate(projectilePrefab, shootPoint.position, Quaternion.identity);
+        // Instanciar el proyectil en el punto de disparo y con su rotación
+        Instantiate(projectilePrefab, shootPoint.position, shootPoint.rotation);
     }
 }
