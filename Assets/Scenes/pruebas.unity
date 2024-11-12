@@ -207,6 +207,7 @@ MonoBehaviour:
   enemiesPerWave: 5
   enemySpeed: 3
   waveSpeedMultiplier: 1
+  spawnSpacing: 1
 --- !u!1 &237859030
 GameObject:
   m_ObjectHideFlags: 0
@@ -1451,6 +1452,7 @@ MonoBehaviour:
   enemiesPerWave: 5
   enemySpeed: 3
   waveSpeedMultiplier: 1
+  spawnSpacing: 1
 --- !u!4 &1100598711
 Transform:
   m_ObjectHideFlags: 0
@@ -1612,6 +1614,7 @@ MonoBehaviour:
   enemiesPerWave: 5
   enemySpeed: 3
   waveSpeedMultiplier: 1
+  spawnSpacing: 1.58
 --- !u!4 &1309143494
 Transform:
   m_ObjectHideFlags: 0
