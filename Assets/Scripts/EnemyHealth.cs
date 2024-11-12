@@ -6,6 +6,7 @@ public class EnemyHealth : MonoBehaviour
 {
     public int maxHealth = 3; // Salud máxima del enemigo
     private int currentHealth;
+   [HideInInspector] public  Transform target;
 
     void Start()
     {
