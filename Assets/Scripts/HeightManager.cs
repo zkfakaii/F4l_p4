@@ -10,13 +10,13 @@ public class HeightManager : MonoBehaviour
 
     private bool isAerial = false;          // Indicador de si estamos en modo aéreo
 
-    
+    // Propiedad pública para acceder al estado aéreo
+    public bool IsAerial => isAerial;
+
     void Start()
     {
         // Inicializar el script de comportamiento normal en el modo inicial (Normal)
         SetActiveState(UnitState.Normal);
-
-       
     }
 
     void Update()
@@ -29,20 +29,14 @@ public class HeightManager : MonoBehaviour
                 // Regresar al estado anterior cuando hacemos clic derecho
                 SetActiveState(previousState);
                 isAerial = false; // Se sale del modo aéreo
-
-                
             }
             else
             {
                 // Guardar el estado anterior y entrar en modo aéreo
                 previousState = currentState;
                 SetActiveState(UnitState.Aerial);
-                isAerial = true;
-                Debug.Log("arria");
-                // Entramos en el modo aéreo
-
-                // Activar la animación de Aéreo
-               
+                isAerial = true;  // Se entra al modo aéreo
+                Debug.Log("Modo aéreo activado");
             }
         }
     }
@@ -50,7 +44,7 @@ public class HeightManager : MonoBehaviour
     // Método para gestionar la activación de estados
     private void SetActiveState(UnitState newState)
     {
-        // Desactivar el script aéreo
+        // Desactivar el script aéreo si lo hay
         if (aerialScript != null) aerialScript.enabled = false;
 
         // Activar el script correspondiente al nuevo estado
@@ -68,4 +62,3 @@ public class HeightManager : MonoBehaviour
         currentState = newState;
     }
 }
-

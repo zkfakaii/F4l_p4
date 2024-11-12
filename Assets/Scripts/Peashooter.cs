@@ -4,11 +4,19 @@ using UnityEngine;
 
 public class Peashooter : MonoBehaviour
 {
-    public GameObject projectilePrefab; // Prefab del proyectil
-    public Transform shootPoint;        // Punto desde donde se dispara el proyectil
-    public float shootInterval = 1.5f;  // Intervalo de disparo en segundos
+    public GameObject normalProjectilePrefab; // Prefab del proyectil en modo Normal
+    public GameObject aerialProjectilePrefab; // Prefab del proyectil en modo Aéreo
+    public Transform shootPoint;             // Punto desde donde se dispara el proyectil
+    public float shootInterval = 1.5f;       // Intervalo de disparo en segundos
 
     private float shootTimer;
+    private HeightManager heightManager;     // Referencia al script HeightManager
+
+    void Start()
+    {
+        // Buscar el script HeightManager en la escena
+        heightManager = FindObjectOfType<HeightManager>();
+    }
 
     void Update()
     {
@@ -25,7 +33,10 @@ public class Peashooter : MonoBehaviour
 
     private void Shoot()
     {
+        // Determinar el prefab a disparar según el estado actual
+        GameObject projectileToShoot = (heightManager != null && heightManager.IsAerial) ? aerialProjectilePrefab : normalProjectilePrefab;
+
         // Instanciar el proyectil en el punto de disparo y con su rotación
-        Instantiate(projectilePrefab, shootPoint.position, shootPoint.rotation);
+        Instantiate(projectileToShoot, shootPoint.position, shootPoint.rotation);
     }
 }

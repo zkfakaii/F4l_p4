@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
 {
+    public enum AttackType { Ground, Aerial, Area } // Agregado el tipo de ataque "Area"
+    public AttackType attackType = AttackType.Ground; // Tipo de ataque, predeterminado a "Ground"
+
     public float attackRange = 2f;          // Rango en el que el enemigo puede atacar
     public int damagePerTick = 1;           // Daño que se inflige por tic
     public float tickInterval = 1f;         // Intervalo de tiempo entre cada tic de daño
@@ -26,12 +29,28 @@ public class EnemyAttack : MonoBehaviour
         // Si hay una unidad en rango, aplicar daño en tics
         if (targetUnit != null)
         {
-            animator.SetBool("atacando", true);
+            // Cambia la animación según el tipo de ataque
+            if (attackType == AttackType.Aerial)
+            {
+                animator.SetBool("aerialAttack", true); // Activar animación de ataque aéreo
+            }
+            else if (attackType == AttackType.Area)
+            {
+                animator.SetBool("areaAttack", true); // Activar animación de ataque área (puedes agregarla en el Animator)
+            }
+            else
+            {
+                animator.SetBool("atacando", true);     // Activar animación de ataque terrestre
+            }
+
             ApplyDamageOverTime();
         }
         else
         {
+            // Desactiva las animaciones cuando no hay un objetivo
             animator.SetBool("atacando", false);
+            animator.SetBool("aerialAttack", false);
+            animator.SetBool("areaAttack", false); // Desactivar animación de ataque área
         }
     }
 
@@ -63,7 +82,7 @@ public class EnemyAttack : MonoBehaviour
             UnitHealth unitHealth = targetUnit.GetComponent<UnitHealth>();
             if (unitHealth != null)
             {
-                unitHealth.TakeDamage(damagePerTick);
+                unitHealth.TakeDamage(damagePerTick, (UnitHealth.AttackType)attackType);
             }
 
             // Reiniciar el temporizador de tic
@@ -74,7 +93,20 @@ public class EnemyAttack : MonoBehaviour
     // Método para visualizar el rango de ataque en el editor
     private void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.red;
+        // Cambiar el color dependiendo del tipo de ataque
+        if (attackType == AttackType.Aerial)
+        {
+            Gizmos.color = Color.blue;
+        }
+        else if (attackType == AttackType.Area)
+        {
+            Gizmos.color = Color.green; // Color para el ataque área
+        }
+        else
+        {
+            Gizmos.color = Color.red; // Color para el ataque terrestre
+        }
+
         Gizmos.DrawWireSphere(transform.position, attackRange);
     }
 }
