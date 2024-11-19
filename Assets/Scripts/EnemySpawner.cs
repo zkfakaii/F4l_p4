@@ -1,131 +1,127 @@
 using UnityEngine;
+using System.Collections.Generic;
+
+[System.Serializable]
+public class mySpawnerType
+{
+    public bool first;
+    public bool second;
+    public bool third;
+}
 
 public class EnemySpawner : MonoBehaviour
 {
-    public GameObject enemyPrefab;       // Prefab del enemigo
-    public Transform spawnLineStart;     // Punto inicial de la línea de generación
-    public Transform spawnLineEnd;       // Punto final de la línea de generación
+    public mySpawnerType myType;
+    public GameObject enemyPrefab;           // Prefab del enemigo
+    public Transform[] spawnLineStarts;      // Puntos de inicio para spawn
+    public Transform[] spawnLineEnds;        // Puntos finales para spawn
 
-    public float spawnInterval = 2f;     // Intervalo de tiempo entre cada generación de enemigo
-    public float waveInterval = 5f;      // Intervalo de tiempo entre olas de enemigos
-    private float spawnTimer = 0f;       // Temporizador para contar el tiempo de generación de enemigos
-    private float waveTimer = 0f;        // Temporizador para controlar el intervalo entre olas
-    private bool isWaveActive = false;   // Indicador de si la ola está activa
+    public bool IsWaveActive { get; private set; }  // Si la ola está activa
+    private int enemiesSpawnedInWave = 0;             // Contador de enemigos generados en la ola actual
+    private List<SpawnEvent> spawnEvents = new List<SpawnEvent>(); // Lista de eventos de spawn
 
-    public int enemiesPerWave = 5;       // Cantidad de enemigos por ola
-    private int enemiesSpawnedInWave = 0; // Contador de enemigos generados en la ola actual
+    private float waveTimer = 0f;            // Temporizador de la ola
+    private int currentEventIndex = 0;       // Índice del evento que está sucediendo
 
-    public float enemySpeed = 3f;        // Velocidad base de los enemigos
-    public float waveSpeedMultiplier = 1f; // Factor que multiplica la velocidad de los enemigos en cada ola
-
-    public float spawnSpacing = 1f;      // Espaciado entre enemigos cuando se generen a lo largo de la línea
+    public float minEnemySpeed = 1f;         // Velocidad mínima de los enemigos
+    public float maxEnemySpeed = 3f;         // Velocidad máxima de los enemigos
 
     void Update()
     {
-        // Aumentar el temporizador de la ola
-        waveTimer += Time.deltaTime;
-
-        // Si ha pasado el intervalo de tiempo de la ola, inicia la ola
-        if (waveTimer >= waveInterval && !isWaveActive)
+        if (IsWaveActive)
         {
-            StartWave();
-        }
+            // Aumentar el temporizador de la ola
+            waveTimer += Time.deltaTime;
 
-        // Si la ola está activa, generamos enemigos con spawnTimer
-        if (isWaveActive)
-        {
-            spawnTimer += Time.deltaTime;
-
-            // Si ha pasado el intervalo de generación y aún no se generaron todos los enemigos de la ola
-            if (spawnTimer >= spawnInterval && enemiesSpawnedInWave < enemiesPerWave)
+            // Verificar si hay eventos que se deben activar en este momento
+            if (currentEventIndex < spawnEvents.Count)
             {
-                SpawnEnemy();
-                spawnTimer = 0f; // Reiniciar el temporizador de generación de enemigos
+                SpawnEvent currentEvent = spawnEvents[currentEventIndex];
+
+                // Si es el momento del evento, disparar el spawn
+                if (waveTimer >= currentEvent.spawnTime)
+                {
+                    TriggerSpawnEvent(currentEvent);
+                    currentEventIndex++;
+                }
             }
         }
     }
 
-    void StartWave()
+    // Iniciar la ola
+    public void StartWave()
     {
-        // Reiniciar los contadores y activar la ola
-        isWaveActive = true;
-        enemiesSpawnedInWave = 0; // Reiniciar el contador de enemigos por ola
-        Debug.Log("¡Iniciando nueva ola!");
+        enemiesSpawnedInWave = 0;
+        IsWaveActive = true;
+        waveTimer = 0f;
+        currentEventIndex = 0;
+        Debug.Log("¡Ola iniciada!");
     }
 
-    void SpawnEnemy()
+    // Detener la ola
+    public void EndWave()
     {
-        // Calcular una posición aleatoria a lo largo de la línea entre spawnLineStart y spawnLineEnd, con un espaciado
-        float distanceBetween = Vector3.Distance(spawnLineStart.position, spawnLineEnd.position);
-        float spawnPositionOffset = (enemiesSpawnedInWave * spawnSpacing); // Desplazamiento basado en el número de enemigos generados
+        IsWaveActive = false;
+        Debug.Log("¡Ola finalizada!");
+    }
 
-        // Asegurarnos de que no nos salimos de la distancia disponible
-        spawnPositionOffset = Mathf.Clamp(spawnPositionOffset, 0, distanceBetween);
+    // Establecer la lista de eventos de spawn
+    public void SetSpawnEvents(List<SpawnEvent> events)
+    {
+        spawnEvents = events;
+    }
 
-        // Calcular la posición de cada enemigo a lo largo de la línea de generación
-        Vector3 spawnPosition = Vector3.Lerp(spawnLineStart.position, spawnLineEnd.position, spawnPositionOffset / distanceBetween);
+    // Generar enemigos en un evento de spawn
+    private void TriggerSpawnEvent(SpawnEvent spawnEvent)
+    {
+        for (int i = 0; i < spawnEvent.enemyCount; i++)
+        {
+            if((spawnEvent.spawnType.first == myType.first && myType.first == true) ||
+               (spawnEvent.spawnType.second == myType.second && myType.second == true) ||
+               (spawnEvent.spawnType.third == myType.third && myType.third == true) 
+                ) { 
+                SpawnEnemy();
+            }
+        }
+    }
 
-        // Crear el enemigo en la posición generada
+    // Función para generar un enemigo
+    private void SpawnEnemy()
+    {
+        // Elegir una línea de spawn aleatoria
+        int randomLineIndex = Random.Range(0, spawnLineStarts.Length);
+        Transform spawnStart = spawnLineStarts[randomLineIndex];
+        Transform spawnEnd = spawnLineEnds[randomLineIndex];
+
+        // Generar el enemigo en la posición de inicio
+        Vector3 spawnPosition = spawnStart.position;
+
+        // Crear el enemigo en la posición de spawn
         GameObject newEnemy = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
-
-        // Asignar el objetivo de la línea de movimiento (fin de la línea) al enemigo
         Enemy enemyScript = newEnemy.GetComponent<Enemy>();
+
         if (enemyScript != null)
         {
-            // Configurar la posición final de la línea para que el enemigo se mueva hacia allí
-            enemyScript.SetTargetPosition(spawnLineEnd.position);
+            // Configurar la posición final (target) para que el enemigo se mueva hacia el final
+            enemyScript.SetTargetPosition(spawnEnd.position);
 
-            // Configurar la velocidad del enemigo en función de la ola
-            //enemyScript.SetSpeed(enemySpeed * waveSpeedMultiplier);
+            // Establecer la velocidad del enemigo
+            float enemySpeed = Random.Range(minEnemySpeed, maxEnemySpeed);
+            enemyScript.SetSpeed(enemySpeed);
         }
         else
         {
             Debug.LogError("El prefab del enemigo no tiene un componente 'Enemy'.");
         }
 
-        // Incrementar el contador de enemigos en la ola
         enemiesSpawnedInWave++;
-
-        // Si se han generado todos los enemigos de la ola, desactivar la ola
-        if (enemiesSpawnedInWave >= enemiesPerWave)
-        {
-            isWaveActive = false;
-            waveTimer = 0f; // Reiniciar el temporizador para la siguiente ola
-        }
     }
+}
 
-    // Método para cambiar el intervalo de generación de enemigos en tiempo de ejecución
-    public void SetSpawnInterval(float newInterval)
-    {
-        spawnInterval = newInterval;
-        Debug.Log("Nuevo intervalo de generación: " + spawnInterval);
-    }
-
-    // Método para cambiar la velocidad de los enemigos en tiempo de ejecución
-    public void SetEnemySpeed(float newSpeed)
-    {
-        enemySpeed = newSpeed;
-        Debug.Log("Nueva velocidad de enemigos: " + enemySpeed);
-    }
-
-    // Método para cambiar el intervalo de las olas de enemigos en tiempo de ejecución
-    public void SetWaveInterval(float newWaveInterval)
-    {
-        waveInterval = newWaveInterval;
-        Debug.Log("Nuevo intervalo de olas: " + waveInterval);
-    }
-
-    // Método para cambiar la cantidad de enemigos por ola en tiempo de ejecución
-    public void SetEnemiesPerWave(int newEnemyCount)
-    {
-        enemiesPerWave = newEnemyCount;
-        Debug.Log("Nueva cantidad de enemigos por ola: " + enemiesPerWave);
-    }
-
-    // Método para cambiar la velocidad de las olas (modificador) en tiempo de ejecución
-    public void SetWaveSpeedMultiplier(float newMultiplier)
-    {
-        waveSpeedMultiplier = newMultiplier;
-        Debug.Log("Nuevo multiplicador de velocidad de la ola: " + waveSpeedMultiplier);
-    }
+[System.Serializable]
+public class SpawnEvent
+{
+    public mySpawnerType spawnType;
+    public float spawnTime;     // Tiempo en el que debe aparecer este evento (en segundos)
+    public int enemyCount;      // Cantidad de enemigos a generar en este evento
 }
