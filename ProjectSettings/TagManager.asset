@@ -19,10 +19,10 @@ TagManager:
   - Normal
   - Aerial
   - Generating
-  - 
-  - 
-  - 
-  - 
+  - GroundFire
+  - AerialFire
+  - EnemyGround
+  - EnemyAerial
   - 
   - 
   - 
