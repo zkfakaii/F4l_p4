@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4083776476546916168}
   - component: {fileID: 6230861273392298955}
   - component: {fileID: 1609636122226608283}
+  - component: {fileID: 8530773201468545908}
   m_Layer: 0
   m_Name: Root
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 2129495652370944828}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.076, y: 0.046, z: 0}
   m_LocalScale: {x: 0.3569, y: 0.3569, z: 0.3569}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -44,7 +45,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2129495652370944828}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: f7ad7017516df584ca9da1240f7dfc1f, type: 2}
   m_CullingMode: 0
@@ -78,7 +79,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2129495652370944828}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4d2bae80e4aa4dc4d99af55519f65f22, type: 3}
   m_Name: 
@@ -89,7 +90,7 @@ MonoBehaviour:
   tickInterval: 2
   unitLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 896
 --- !u!136 &1609636122226608283
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -113,6 +114,25 @@ CapsuleCollider:
   m_Height: 5
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8530773201468545908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129495652370944828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1a33aaadbb324f4bb2eb3bccddabd94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackType: 0
+  attackRange: 0.5
+  damagePerTick: 10
+  tickInterval: 1
+  unitLayer:
+    serializedVersion: 2
+    m_Bits: 896
 --- !u!1 &4062521821849388122
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,7 +144,7 @@ GameObject:
   - component: {fileID: 8399762110103597867}
   m_Layer: 0
   m_Name: Normal-Ningen 1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

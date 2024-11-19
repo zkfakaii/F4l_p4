@@ -1,17 +1,18 @@
-using System.Collections;
+using System.Collections; 
 using System.Collections.Generic;
 using UnityEngine;
 
 public class HoneyState : MonoBehaviour
 {
     public int honeyPerTick = 5;        // Cantidad de miel generada por tick.
-    public float tickInterval = 1f;    // Intervalo de tiempo entre cada tick en segundos.
-    public int maxHoney = 100;         // Máximo de miel que puede generar la unidad.
+    public float tickInterval = 1f;     // Intervalo de tiempo entre cada tick en segundos.
+    public int maxHoney = 100;          // Máximo de miel que puede generar la unidad.
 
-    private int currentHoney = 0;      // Miel actual generada por esta unidad.
-    private float tickTimer = 0f;      // Temporizador para controlar los ticks.
+    private int currentHoney = 0;       // Miel actual generada por esta unidad.
+    private float tickTimer = 0f;       // Temporizador para controlar los ticks.
+    private bool isGenerating = false;  // Estado para saber si la unidad está generando miel.
 
-    public Miel globalMielSystem;      // Referencia al sistema global de Miel.
+    public Miel globalMielSystem;       // Referencia al sistema global de Miel
 
     void Start()
     {
@@ -23,18 +24,22 @@ public class HoneyState : MonoBehaviour
 
     void Update()
     {
-        // Actualizar el temporizador y generar miel en cada tick.
-        tickTimer += Time.deltaTime;
-        if (tickTimer >= tickInterval)
+
+        // Si la unidad está en modo Generating, generar miel
+        if (gameObject.layer == LayerMask.NameToLayer("Generating"))
         {
-            GenerateHoney();
-            tickTimer -= tickInterval;
+            tickTimer += Time.deltaTime;
+            if (tickTimer >= tickInterval)
+            {
+                GenerateHoney();
+                tickTimer -= tickInterval;
+            }
         }
     }
 
     void GenerateHoney()
     {
-        // Generar miel y enviarla al sistema global, respetando el límite.
+        // Generar miel y enviarla al sistema global, respetando el límite
         if (globalMielSystem != null && globalMielSystem.currentMiel < (int)globalMielSystem.maxMiel)
         {
             int remainingCapacity = (int)globalMielSystem.maxMiel - globalMielSystem.currentMiel;
@@ -43,7 +48,7 @@ public class HoneyState : MonoBehaviour
             globalMielSystem.currentMiel += honeyToGenerate;
             currentHoney += honeyToGenerate;
 
-            // Limitar la miel generada localmente al máximo permitido.
+            // Limitar la miel generada localmente al máximo permitido
             currentHoney = Mathf.Clamp(currentHoney, 0, maxHoney);
 
             Debug.Log($"Unidad generó {honeyToGenerate} de miel. Total global: {globalMielSystem.currentMiel}");
