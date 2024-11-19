@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8436585518311481456}
   - component: {fileID: 958941735508781841}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 5791005407949112604}
   - component: {fileID: 486924018291482191}
   - component: {fileID: 138286073318090068}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -164,7 +164,7 @@ GameObject:
   - component: {fileID: 4742804158744937391}
   - component: {fileID: 9059870525272673675}
   - component: {fileID: 4947336147188395504}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Sprite-0001 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -251,7 +251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d4e0376e9fde7541b008856186cd9e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 2.5
 --- !u!135 &4947336147188395504
 SphereCollider:
   m_ObjectHideFlags: 0
