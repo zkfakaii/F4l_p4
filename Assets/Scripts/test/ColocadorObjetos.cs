@@ -30,7 +30,6 @@ public class ColocadorObjetos : MonoBehaviour
         objetoSeleccionado = Instantiate(prefab);
     }
 
-
     private Vector3 ObtenerPosicionMouse()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
