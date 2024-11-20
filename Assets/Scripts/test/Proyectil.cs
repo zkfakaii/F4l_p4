@@ -41,38 +41,24 @@ public class Proyectil : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // Verificar si el proyectil colisiona con un enemigo
         EnemigosHP enemyHP = other.GetComponent<EnemigosHP>();
         if (enemyHP != null)
         {
-            // Aplica el daño al enemigo
             enemyHP.TakeDamage(damage);
 
-            // Verificar si el proyectil tiene una probabilidad de congelar
             if (Random.value <= freezeProbability)
             {
                 EnemyWalk enemyWalk = other.GetComponent<EnemyWalk>();
                 if (enemyWalk != null)
                 {
-                    // Congela el movimiento del enemigo
-                    enemyWalk.FreezeMovement();
-
-                    // Descongelar después de un tiempo
-                    StartCoroutine(UnfreezeAfterDelay(enemyWalk));
+                    // Congela el movimiento del enemigo con la duración del proyectil.
+                    enemyWalk.FreezeMovement(freezeDuration);
                 }
             }
 
-            // El proyectil se destruye después de la colisión
             Destroy(gameObject);
         }
     }
 
-    private IEnumerator UnfreezeAfterDelay(EnemyWalk enemyWalk)
-    {
-        // Espera el tiempo de congelamiento
-        yield return new WaitForSeconds(freezeDuration);
 
-        // Descongela el movimiento del enemigo
-        enemyWalk.UnfreezeMovement();
-    }
 }

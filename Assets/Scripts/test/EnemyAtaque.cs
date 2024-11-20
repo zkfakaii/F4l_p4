@@ -1,4 +1,3 @@
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,9 +16,12 @@ public class EnemyAtaque : MonoBehaviour
     private GameObject targetUnit;
     private Animator animator;
 
+    private EnemyWalk enemyWalk;            // Referencia al script EnemyWalk
+
     void Start()
     {
         animator = GetComponentInParent<Animator>();
+        enemyWalk = GetComponent<EnemyWalk>(); // Obtener referencia al script EnemyWalk
     }
 
     void Update()
@@ -27,9 +29,10 @@ public class EnemyAtaque : MonoBehaviour
         // Detectar unidades dentro del rango de ataque
         DetectUnit();
 
-        // Si hay una unidad en el rango, aplicar daño por tics
+        // Si hay una unidad en el rango, detener el movimiento y atacar
         if (targetUnit != null)
         {
+
             // Cambiar la animación según el tipo de ataque
             if (attackType == AttackType.Aerial)
             {
@@ -48,6 +51,7 @@ public class EnemyAtaque : MonoBehaviour
         }
         else
         {
+
             // Desactivar las animaciones cuando no hay un objetivo
             animator.SetBool("atacando", false);
             animator.SetBool("aerialAttack", false);

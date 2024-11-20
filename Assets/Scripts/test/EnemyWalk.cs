@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Collections;
 
 public class EnemyWalk : MonoBehaviour
 {
@@ -8,49 +9,49 @@ public class EnemyWalk : MonoBehaviour
     [SerializeField] private Vector3 movementDirection = Vector3.forward; // Dirección en la que se moverá el enemigo.
     [SerializeField] private float moveSpeed = 5f; // Velocidad de movimiento.
 
+    [Header("Freeze Settings")]
+    [SerializeField] private float defaultFreezeDuration = 2f; // Duración predeterminada del congelamiento.
+
     [Header("Movement Control")]
     [SerializeField] private bool isFrozen = false; // Indica si el movimiento está congelado.
     [SerializeField] private float slowFactor = 1f; // Factor de ralentización (1 significa velocidad normal, 0 significa detenido).
 
+    private Coroutine freezeCoroutine;
+
     private void Update()
     {
-        // Aplica el movimiento si no está congelado.
         if (!isFrozen)
         {
-            float adjustedSpeed = moveSpeed * Mathf.Clamp(slowFactor, 0f, 1f); // Ajusta la velocidad según el slowFactor.
+            float adjustedSpeed = moveSpeed * Mathf.Clamp(slowFactor, 0f, 1f);
             transform.Translate(movementDirection.normalized * adjustedSpeed * Time.deltaTime, Space.World);
         }
     }
 
-    /// <summary>
-    /// Congela el movimiento del enemigo.
-    /// </summary>
-    public void FreezeMovement()
+    public void FreezeMovement(float freezeDuration = -1f)
     {
+        if (freezeDuration < 0)
+        {
+            freezeDuration = defaultFreezeDuration; // Usa la duración del inspector si no se especifica.
+        }
+
         isFrozen = true;
+
+        if (freezeCoroutine != null)
+        {
+            StopCoroutine(freezeCoroutine);
+        }
+        freezeCoroutine = StartCoroutine(UnfreezeAfterDelay(freezeDuration));
     }
 
-    /// <summary>
-    /// Descongela el movimiento del enemigo.
-    /// </summary>
     public void UnfreezeMovement()
     {
         isFrozen = false;
     }
 
-    /// <summary>
-    /// Establece el factor de ralentización para el movimiento.
-    /// </summary>
-    /// <param name="factor">Un valor entre 0 (detenido) y 1 (velocidad normal).</param>
-    public void SetSlowFactor(float factor)
+    private IEnumerator UnfreezeAfterDelay(float freezeDuration)
     {
-        slowFactor = Mathf.Clamp(factor, 0f, 1f);
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        // Dibuja una línea para mostrar la dirección del movimiento.
-        Gizmos.color = Color.green;
-        Gizmos.DrawLine(transform.position, transform.position + movementDirection.normalized * 2f);
+        yield return new WaitForSeconds(freezeDuration);
+        UnfreezeMovement();
+        freezeCoroutine = null;
     }
 }
