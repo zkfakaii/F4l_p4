@@ -10,13 +10,14 @@ GameObject:
   m_Component:
   - component: {fileID: 2142856027602687811}
   - component: {fileID: 6630163311131049000}
-  - component: {fileID: 4083776476546916168}
-  - component: {fileID: 6230861273392298955}
   - component: {fileID: 1609636122226608283}
   - component: {fileID: 8530773201468545908}
-  m_Layer: 0
+  - component: {fileID: 3563201557053603963}
+  - component: {fileID: 8141752667138542216}
+  - component: {fileID: 6700389410928106519}
+  m_Layer: 12
   m_Name: Root
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 2129495652370944828}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.076, y: 0.046, z: 0}
+  m_LocalPosition: {x: -0.47, y: 0.046, z: 0}
   m_LocalScale: {x: 0.3569, y: 0.3569, z: 0.3569}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -58,39 +59,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &4083776476546916168
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2129495652370944828}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca5025d11ba4d894dac639bf76e56dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100000
-  target: {fileID: 0}
---- !u!114 &6230861273392298955
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2129495652370944828}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d2bae80e4aa4dc4d99af55519f65f22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackType: 1
-  attackRange: 1
-  damagePerTick: 10
-  tickInterval: 2
-  unitLayer:
-    serializedVersion: 2
-    m_Bits: 896
 --- !u!136 &1609636122226608283
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -106,12 +74,12 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 1
-  m_Height: 5
+  m_Height: 1.02
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8530773201468545908
@@ -127,12 +95,69 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackType: 0
-  attackRange: 0.5
+  attackRange: 0.36
   damagePerTick: 10
   tickInterval: 1
   unitLayer:
     serializedVersion: 2
     m_Bits: 896
+--- !u!114 &3563201557053603963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129495652370944828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5499a2b1b5e5712439a3d39615e6dde0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 10000
+--- !u!54 &8141752667138542216
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129495652370944828}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &6700389410928106519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129495652370944828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd6f5081876c5a942b51861da0470ab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementDirection: {x: -1, y: 0, z: 0}
+  moveSpeed: 0.3
+  defaultFreezeDuration: 1
+  isFrozen: 0
+  slowFactor: 1
 --- !u!1 &4062521821849388122
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,7 +167,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8399762110103597867}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Normal-Ningen 1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -175,7 +200,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5897741257419572829}
   - component: {fileID: 9037613305613684755}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: zd9vbm8jk4ad1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
