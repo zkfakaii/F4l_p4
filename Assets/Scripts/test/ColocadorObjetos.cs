@@ -2,9 +2,11 @@ using UnityEngine;
 
 public class ColocadorObjetos : MonoBehaviour
 {
-    public LayerMask mapaLayer; // Layer que representa el plano del mapa.
+    public LayerMask mapaLayer; // Capa que representa el plano del mapa.
     public Vector3 posicionOffset = Vector3.zero; // Offset para ajustar la posición final.
     public float tamanioCelda = 1f; // Tamaño de las celdas de la grilla.
+    public int anchoGrilla = 10; // Número de casillas en el eje X.
+    public int altoGrilla = 10; // Número de casillas en el eje Z.
 
     private GameObject objetoSeleccionado;
 
@@ -14,19 +16,22 @@ public class ColocadorObjetos : MonoBehaviour
         {
             // Mueve el objeto con el mouse.
             Vector3 posicionMouse = ObtenerPosicionMouse();
-            objetoSeleccionado.transform.position = posicionMouse;
-
-            // Coloca el objeto al hacer clic izquierdo.
-            if (Input.GetMouseButtonDown(0))
+            if (posicionMouse != Vector3.zero)
             {
-                ColocarObjeto(posicionMouse);
+                objetoSeleccionado.transform.position = posicionMouse;
+
+                // Coloca el objeto al hacer clic izquierdo.
+                if (Input.GetMouseButtonDown(0))
+                {
+                    ColocarObjeto(posicionMouse);
+                }
             }
         }
     }
 
     public void SeleccionarObjeto(GameObject prefab)
     {
-        // Instanciar y seleccionar el objeto para colocarlo.
+        // Instanciar el objeto y prepararlo para colocarlo.
         objetoSeleccionado = Instantiate(prefab);
     }
 
@@ -35,22 +40,44 @@ public class ColocadorObjetos : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out RaycastHit hitInfo, Mathf.Infinity, mapaLayer))
         {
-            Vector3 posicionImpacto = hitInfo.point;
+            Vector3 posicion = hitInfo.point;
 
-            // Ajustar a la grilla redondeando las coordenadas al tamaño de la celda.
-            float x = Mathf.Round(posicionImpacto.x / tamanioCelda) * tamanioCelda;
-            float z = Mathf.Round(posicionImpacto.z / tamanioCelda) * tamanioCelda;
+            // Ajustar la posición al grid.
+            float x = Mathf.Round((posicion.x - posicionOffset.x) / tamanioCelda) * tamanioCelda + posicionOffset.x;
+            float z = Mathf.Round((posicion.z - posicionOffset.z) / tamanioCelda) * tamanioCelda + posicionOffset.z;
 
-            return new Vector3(x, posicionImpacto.y, z) + posicionOffset;
+            return new Vector3(x, posicion.y + posicionOffset.y, z); // Ajustar la posición y el offset.
         }
 
-        return Vector3.zero; // Si no se detecta impacto, retorna posición por defecto.
+        return Vector3.zero;
     }
 
     private void ColocarObjeto(Vector3 posicion)
     {
-        // Fija la posición del objeto y lo libera del control.
+        // Fija la posición final del objeto y lo libera del control.
         objetoSeleccionado.transform.position = posicion;
-        objetoSeleccionado = null; // Se libera el objeto actual.
+        objetoSeleccionado = null;
+    }
+
+    // Método para dibujar la grilla con Gizmos.
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+
+        for (int x = 0; x <= anchoGrilla; x++)
+        {
+            for (int z = 0; z <= altoGrilla; z++)
+            {
+                // Calcula la posición de cada casilla.
+                Vector3 casillaPos = new Vector3(
+                    x * tamanioCelda + posicionOffset.x,
+                    posicionOffset.y,
+                    z * tamanioCelda + posicionOffset.z
+                );
+
+                // Dibuja un cubo transparente en cada casilla.
+                Gizmos.DrawWireCube(casillaPos, new Vector3(tamanioCelda, 0.01f, tamanioCelda));
+            }
+        }
     }
 }
