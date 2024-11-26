@@ -12,7 +12,7 @@ public class DialogTypewriterController : MonoBehaviour
     private bool isDialogFinished = false;
 
     [SerializeField] private float typingSpeed = 0.05f; // Velocidad de escritura normal
-    [SerializeField] private float fastTypingSpeed = 0.01f; // Velocidad de escritura r�pida
+    [SerializeField] private float fastTypingSpeed = 0.01f; // Velocidad de escritura rápida
     private float currentTypingSpeed; // Velocidad actual de escritura
 
     void Start()
@@ -30,18 +30,19 @@ public class DialogTypewriterController : MonoBehaviour
 
     public void DisplayNextSentence()
     {
-        if (isTyping) return; // No avanzar hasta que la oraci�n actual termine de escribirse
+        if (isTyping) return; // No avanzar hasta que la oración actual termine de escribirse
 
         sentenceIndex++;
 
         if (sentenceIndex < sentences.Count)
         {
-            dialogText.text += "\n";
+            StopAllCoroutines(); // Detenemos cualquier escritura en curso
+            dialogText.text = ""; // Reemplazamos el texto anterior
             StartCoroutine(TypeSentence(sentences[sentenceIndex]));
         }
         else
         {
-            isDialogFinished = true; // Marcar el di�logo como terminado
+            isDialogFinished = true; // Marcar el diálogo como terminado
         }
     }
 
@@ -61,7 +62,7 @@ public class DialogTypewriterController : MonoBehaviour
         // Cambia la velocidad de escritura al mantener presionada la tecla espacio
         if (Input.GetKey(KeyCode.Space))
         {
-            currentTypingSpeed = fastTypingSpeed; // Velocidad r�pida
+            currentTypingSpeed = fastTypingSpeed; // Velocidad rápida
         }
         else
         {
@@ -69,7 +70,7 @@ public class DialogTypewriterController : MonoBehaviour
         }
     }
 
-    // Funci�n para verificar si el di�logo ha terminado
+    // Función para verificar si el diálogo ha terminado
     public bool IsDialogFinished()
     {
         return isDialogFinished;
