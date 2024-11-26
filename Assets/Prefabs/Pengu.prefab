@@ -207,9 +207,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6089e9837d432514584db8fc71ed3159, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  honeyPerTick: 20
-  tickInterval: 1
-  maxHoney: 50000
+  honeyPerTick: 10
+  tickInterval: 5
+  maxHoney: 10000
   globalMielSystem: {fileID: 0}
 --- !u!114 &2248522727393838682
 MonoBehaviour:
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e18b1a174d2594049a36759588a7fdbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10000
+  maxHealth: 30
   normalLayer: Normal
   aerialLayer: Aerial
   generatingLayer: Generating
@@ -245,7 +245,7 @@ MonoBehaviour:
     type: 3}
   fireRate: 1
   fireDirection: {x: 1, y: 0, z: 0}
-  projectileDamage: 10
+  projectileDamage: 20
 --- !u!1 &7788661166843977990
 GameObject:
   m_ObjectHideFlags: 0

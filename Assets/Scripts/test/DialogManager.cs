@@ -4,6 +4,7 @@ using UnityEngine;
 public class DialogManager : MonoBehaviour
 {
     [SerializeField] private List<DialogTypewriterController> dialogBoxes; // Lista de cuadros de texto (dialog boxes)
+    [SerializeField] private GameObject panelToDeactivate; // Panel que se desactivará al terminar el diálogo
     private int currentDialogIndex = 0; // Índice del cuadro de texto actual
     private bool dialogActive = true; // Estado del diálogo (si está activo o no)
 
@@ -60,7 +61,16 @@ public class DialogManager : MonoBehaviour
         {
             Debug.Log("Todos los cuadros de texto han terminado.");
             dialogActive = false;
-            gameObject.SetActive(false); // Desactiva el objeto del DialogManager
+
+            // Desactiva el panel especificado en el inspector
+            if (panelToDeactivate != null)
+            {
+                panelToDeactivate.SetActive(false);
+            }
+            else
+            {
+                Debug.LogWarning("Panel para desactivar no asignado en el inspector.");
+            }
         }
     }
 }

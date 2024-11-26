@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17338693, g: 0.21673912, b: 0.29880813, a: 1}
+  m_IndirectSpecularColor: {r: 0.1733874, g: 0.21673957, b: 0.29880902, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2415,12 +2415,16 @@ MonoBehaviour:
     prefabs:
     - {fileID: 4062521821849388122, guid: 8cafe6fc57f2d784ca40b9a56d620564, type: 3}
     quantities: 01000000
-    spawnTime: 20
+    spawnTime: 5
   - waveName: Second
     prefabs:
     - {fileID: 4062521821849388122, guid: 8cafe6fc57f2d784ca40b9a56d620564, type: 3}
     quantities: 02000000
-    spawnTime: 25
+    spawnTime: 10
+  - waveName: 
+    prefabs: []
+    quantities: 
+    spawnTime: 0
   spawnPoints:
   - {fileID: 774877938}
   - {fileID: 834145008}
@@ -2452,11 +2456,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3162111640603836402, guid: 64cee49b3c03ccc4a82f82ba3d9c8592,
-        type: 3}
-      propertyPath: globalMielSystem
-      value: 
-      objectReference: {fileID: 1493817683}
     - target: {fileID: 3880441497639456203, guid: 64cee49b3c03ccc4a82f82ba3d9c8592,
         type: 3}
       propertyPath: m_Name
@@ -2566,10 +2565,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 1
+  m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1920, y: 1080}
+  m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -4738,8 +4737,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mielImage: {fileID: 1493817684}
   maxMiel: 1000
-  currentMiel: 600
-  regenerationRate: 0
+  currentMiel: 300
+  regenerationRate: 5
 --- !u!114 &1493817684
 MonoBehaviour:
   m_ObjectHideFlags: 0
