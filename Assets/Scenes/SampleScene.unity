@@ -542,18 +542,6 @@ MonoBehaviour:
   totalLanesz: 3
   laneUnits: 3
   initialLane: 0
---- !u!114 &365875894 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 331441398296737974, guid: cc6895ab40f6bd346abad4a0f57c83c5,
-    type: 3}
-  m_PrefabInstance: {fileID: 3431027476363272069}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 365875883}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff4a10e36023d334190c955a60b74847, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &365875897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -581,7 +569,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mielPerTick: 30
   tickInterval: 2
-  behaviorScript: {fileID: 365875894}
+  behaviorScript: {fileID: 0}
   animator: {fileID: 868345167}
   stateTriggers:
   - NormalMode
@@ -599,7 +587,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59002008ee2f7fe40b79066a79c3807e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aerialScript: {fileID: 365875894}
+  aerialScript: {fileID: 0}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -772,6 +760,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objetoAInstanciar: {fileID: 365875883}
   boton: {fileID: 501390732}
+  tiempoCooldown: 5
 --- !u!114 &501390732
 MonoBehaviour:
   m_ObjectHideFlags: 0
