@@ -1614,8 +1614,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mielImage: {fileID: 196782487}
-  maxMiel: 300
-  currentMiel: 50
+  maxMiel: 700
+  currentMiel: 0
   regenerationRate: 4
 --- !u!114 &196782487
 MonoBehaviour:
@@ -1705,24 +1705,36 @@ MonoBehaviour:
   waves:
   - waveName: 'First '
     prefabs:
-    - {fileID: 4062521821849388122, guid: 8cafe6fc57f2d784ca40b9a56d620564, type: 3}
+    - {fileID: 4062521821849388122, guid: 9eebde78b1ed27748ba9e494e0160437, type: 3}
     quantities: 01000000
-    spawnTime: 30
+    spawnTime: 35
   - waveName: Second
     prefabs:
-    - {fileID: 4062521821849388122, guid: 8cafe6fc57f2d784ca40b9a56d620564, type: 3}
+    - {fileID: 4062521821849388122, guid: 9eebde78b1ed27748ba9e494e0160437, type: 3}
     quantities: 02000000
-    spawnTime: 40
-  - waveName: third
-    prefabs:
-    - {fileID: 4062521821849388122, guid: 8cafe6fc57f2d784ca40b9a56d620564, type: 3}
-    quantities: 010000000100000001000000
     spawnTime: 50
-  - waveName: fourth
+  - waveName: third
     prefabs:
     - {fileID: 4062521821849388122, guid: 8cafe6fc57f2d784ca40b9a56d620564, type: 3}
     quantities: 02000000
     spawnTime: 60
+  - waveName: fourth
+    prefabs:
+    - {fileID: 4062521821849388122, guid: 9eebde78b1ed27748ba9e494e0160437, type: 3}
+    - {fileID: 4062521821849388122, guid: 8cafe6fc57f2d784ca40b9a56d620564, type: 3}
+    quantities: 0100000002000000
+    spawnTime: 70
+  - waveName: fifth
+    prefabs:
+    - {fileID: 4062521821849388122, guid: 9eebde78b1ed27748ba9e494e0160437, type: 3}
+    - {fileID: 4062521821849388122, guid: 8cafe6fc57f2d784ca40b9a56d620564, type: 3}
+    quantities: 0300000001000000
+    spawnTime: 85
+  - waveName: fifthB
+    prefabs:
+    - {fileID: 4062521821849388122, guid: 8cafe6fc57f2d784ca40b9a56d620564, type: 3}
+    quantities: 02000000
+    spawnTime: 90
   spawnPoints:
   - {fileID: 1896586951}
   - {fileID: 56008102}
@@ -4270,6 +4282,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   winPanel: {fileID: 52233010}
+  whiteScreen: {fileID: 0}
+  transitionDuration: 1
 --- !u!114 &878981268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7137,17 +7151,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogText: {fileID: 33578789}
   sentences:
-  - "Bien Jefe, ac\xE1 llevaremos a cabo nuestra primera expedici\xF3n real "
-  - "Nuestro objetivo ser\xE1 llenar nuestras reservas de \u201CLa Miel\u201D, tenemos
-    miembros de nuestra Aldea recogiendo de otros lugares"
-  - ' pero solo en los bloques de hielo sobre el agua es donde podemos conseguir
-    el suficiente, coloca una unidad y clickea sobre ella para cambiarla a Modo Recolector '
-  - "pero al estar en Modo Recolecci\xF3n, las Unidades no realizan su comportamiento
-    normal, ya que est\xE1n concentradas recolectando Miel."
-  - 'Cuando necesites que cumpla su trabajo, clickea denuevo sobre la unidad '
-  - Por cierto, los Leus nos vieron hace un rato y reconocieron nuestro potencial,
-    ahora quisieron unirse como parte de la Arctic Hive.
-  - Ellos poseen una gran resistencia, podemos usarlos de escudos.
+  - "(*Gritos de emoci\xF3n*)   "
+  - "\xA1\xA1Jefe!! Mira como celebra nuestra gente "
+  - 'Es eso o es que volvieron a realizar el concurso de pisotear legos. '
+  - "\u2026 "
+  - "Lamentablemente cuando el gran temblor trajo \u201CLa Miel\u201D, ellos vinieron
+    con ella\u2026los Ningen, esas cosas blancas no dejan de acercarse cuando tratamos
+    de conseguir Miel.  "
+  - "Lo peor de todo es que vienen en diferentes formas\u2026 "
+  - "\xA1\xA1Santas Caracolas Jefe!! "
+  - "Veo Ningens A\xE9reos a  la distancia. "
+  - 'Por  suerte nosotros sabemos como combatirlos '
+  - 'Tus unidades y los Ningen  pueden actuar 2 en Alturas: Suelo y Elevada. '
+  - "Solo ser\xE1n afectados y podr\xE1n actuar dentro de su altura, aunque los Ningen
+    tienen la desventaja de no poder cambiar de altura a diferencia de nosotros. "
+  - "En tu estado Normal y Recolector estar\xE1s en Altura: Suelo "
+  - 'Sin embargo, al usar click derecho para cambiar de Altura a Elevada. '
+  - "Por \xFAltimo, tu estado Recolector siempre permanecer\xE1 en Altura Suelo sin
+    importar  que.  "
   typingSpeed: 0.05
   fastTypingSpeed: 0.01
 --- !u!1 &1758233963
