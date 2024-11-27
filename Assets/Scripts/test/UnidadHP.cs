@@ -19,7 +19,8 @@ public class UnidadHP : MonoBehaviour
     [Header("Layer Settings")]
     [SerializeField] private string normalLayer = "Normal";
     [SerializeField] private string aerialLayer = "Aerial";
-    [SerializeField] private string generatingLayer = "Generating";
+    [SerializeField] private string generatingLayer = "Generating"; 
+    
 
     private string currentLayer; // El layer actual de la unidad.
 

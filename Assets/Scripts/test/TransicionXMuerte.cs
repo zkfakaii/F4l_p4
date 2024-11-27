@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class TransicionXMuerte : MonoBehaviour
 {
-    [Header("Configuración de Transición")]
+    /*[Header("Configuración de Transición")]
     [SerializeField] private string targetSceneName; // Nombre de la escena a cargar al final
     [SerializeField] private Image blackScreen; // Imagen negra para la transición
     [SerializeField] private float transitionDuration = 1f; // Duración de la transición en segundos
@@ -95,5 +95,5 @@ public class TransicionXMuerte : MonoBehaviour
         // Cargar la nueva escena
         Debug.Log($"Cargando la escena: {targetSceneName}");
         SceneManager.LoadScene(targetSceneName);
-    }
+    }*/
 }

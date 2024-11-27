@@ -6,13 +6,20 @@ using System.Collections;  // Agregar esta línea
 public class Proyectil : MonoBehaviour
 {
     [Header("Configuración del Proyectil")]
-    [SerializeField] private float speed = 10f;  // Velocidad del proyectil
-    private Vector3 fireDirection;  // Dirección del proyectil
-    private int damage;             // Daño del proyectil
+    [SerializeField] private float speed = 10f;         // Velocidad del proyectil
+    [SerializeField] private float lifetime = 5f;      // Tiempo de vida del proyectil antes de destruirse
+    private Vector3 fireDirection;                     // Dirección del proyectil
+    private int damage;                                // Daño del proyectil
 
     [Header("Congelamiento")]
-    private float freezeDuration;   // Duración del congelamiento
-    private float freezeProbability; // Probabilidad de congelar al enemigo
+    private float freezeDuration;                      // Duración del congelamiento
+    private float freezeProbability;                   // Probabilidad de congelar al enemigo
+
+    private void Start()
+    {
+        // Destruir el proyectil automáticamente después de 'lifetime' segundos
+        Destroy(gameObject, lifetime);
+    }
 
     // Método para asignar la dirección del proyectil
     public void SetFireDirection(Vector3 direction)
@@ -59,6 +66,4 @@ public class Proyectil : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-
 }
