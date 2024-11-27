@@ -1614,9 +1614,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mielImage: {fileID: 196782487}
-  maxMiel: 1000
+  maxMiel: 300
   currentMiel: 50
-  regenerationRate: 3
+  regenerationRate: 4
 --- !u!114 &196782487
 MonoBehaviour:
   m_ObjectHideFlags: 0
