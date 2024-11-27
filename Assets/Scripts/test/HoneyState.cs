@@ -14,13 +14,7 @@ public class HoneyState : MonoBehaviour
 
     public Miel globalMielSystem;       // Referencia al sistema global de Miel
 
-    void Start()
-    {
-        if (globalMielSystem == null)
-        {
-            Debug.LogWarning("No se ha asignado el sistema global de Miel. Asegúrate de conectarlo en el Inspector.");
-        }
-    }
+  
 
     void Update()
     {

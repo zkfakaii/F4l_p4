@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2142856027602687811}
-  - component: {fileID: 6630163311131049000}
   - component: {fileID: 1609636122226608283}
   - component: {fileID: 8530773201468545908}
   - component: {fileID: 3563201557053603963}
@@ -38,27 +37,6 @@ Transform:
   - {fileID: 5897741257419572829}
   m_Father: {fileID: 8399762110103597867}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &6630163311131049000
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2129495652370944828}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f7ad7017516df584ca9da1240f7dfc1f, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!136 &1609636122226608283
 CapsuleCollider:
   m_ObjectHideFlags: 0
