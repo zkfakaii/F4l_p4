@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyAtaque : MonoBehaviour
@@ -32,6 +30,11 @@ public class EnemyAtaque : MonoBehaviour
         // Si hay una unidad en el rango, detener el movimiento y atacar
         if (targetUnit != null)
         {
+            // Detener el movimiento cuando se detecta una unidad
+            if (!enemyWalk.isFrozen)
+            {
+                enemyWalk.FreezeMovement(); // Detener el movimiento del enemigo
+            }
 
             // Cambiar la animación según el tipo de ataque
             if (attackType == AttackType.Aerial)
@@ -51,11 +54,16 @@ public class EnemyAtaque : MonoBehaviour
         }
         else
         {
-
-            // Desactivar las animaciones cuando no hay un objetivo
+            // Si no hay objetivo, detener el ataque y permitir movimiento
             animator.SetBool("atacando", false);
             animator.SetBool("aerialAttack", false);
             animator.SetBool("areaAttack", false); // Desactivar animación de ataque área
+
+            // Permitir que el enemigo se mueva si no está atacando
+            if (enemyWalk.isFrozen)
+            {
+                enemyWalk.UnfreezeMovement(); // Reanudar el movimiento del enemigo
+            }
         }
     }
 
@@ -71,7 +79,8 @@ public class EnemyAtaque : MonoBehaviour
         }
         else
         {
-            targetUnit = null; // Si no hay unidades, establecer el objetivo como nulo
+            // Si no hay unidades, establecer el objetivo como nulo
+            targetUnit = null;
         }
     }
 

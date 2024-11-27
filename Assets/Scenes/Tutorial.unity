@@ -2770,17 +2770,17 @@ MonoBehaviour:
     prefabs:
     - {fileID: 4062521821849388122, guid: 8cafe6fc57f2d784ca40b9a56d620564, type: 3}
     quantities: 01000000
-    spawnTime: 5
+    spawnTime: 30
   - waveName: Second
     prefabs:
     - {fileID: 4062521821849388122, guid: 8cafe6fc57f2d784ca40b9a56d620564, type: 3}
     quantities: 01000000
-    spawnTime: 7
+    spawnTime: 40
   - waveName: third
     prefabs:
     - {fileID: 1795750732608631371, guid: d3326f53afd2a5e4494bf2cb67ea792d, type: 3}
     quantities: 01000000
-    spawnTime: 8
+    spawnTime: 50
   spawnPoints:
   - {fileID: 774877938}
   - {fileID: 834145008}
@@ -6814,8 +6814,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 3238002687
-  m_fontColor: {r: 1, g: 1, b: 1, a: 0.7529412}
+    rgba: 3012127562
+  m_fontColor: {r: 0.2901961, g: 0.41960788, b: 0.5372549, a: 0.7019608}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

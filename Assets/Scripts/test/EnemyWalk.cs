@@ -13,7 +13,7 @@ public class EnemyWalk : MonoBehaviour
     [SerializeField] private float defaultFreezeDuration = 2f; // Duración predeterminada del congelamiento.
 
     [Header("Movement Control")]
-    [SerializeField] private bool isFrozen = false; // Indica si el movimiento está congelado.
+    [SerializeField] public bool isFrozen = false; // Indica si el movimiento está congelado.
     [SerializeField] private float slowFactor = 1f; // Factor de ralentización (1 significa velocidad normal, 0 significa detenido).
 
     private Coroutine freezeCoroutine;

@@ -93,7 +93,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 543869548040042589}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: e62fe9c1ff0e83a49b92d401465ead50, type: 2}
   m_CullingMode: 0
@@ -158,7 +158,7 @@ GameObject:
   - component: {fileID: 7266053208254493015}
   m_Layer: 7
   m_Name: Leus
-  m_TagString: Untagged
+  m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -353,7 +353,7 @@ MonoBehaviour:
   normalLayer: Normal
   aerialLayer: Aerial
   generatingLayer: Generating
-  stateChangeDelay: 1
+  stateChangeDelay: 0
 --- !u!114 &9216065327410007766
 MonoBehaviour:
   m_ObjectHideFlags: 0

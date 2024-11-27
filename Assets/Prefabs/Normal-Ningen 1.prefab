@@ -97,7 +97,7 @@ MonoBehaviour:
   attackType: 0
   attackRange: 0.36
   damagePerTick: 10
-  tickInterval: 1
+  tickInterval: 2
   unitLayer:
     serializedVersion: 2
     m_Bits: 896
@@ -114,6 +114,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  triggersSceneTransition: 0
+  targetSceneName: 
+  blackScreen: {fileID: 0}
+  transitionDuration: 1
+  transitionDelay: 0
 --- !u!54 &8141752667138542216
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -154,7 +159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementDirection: {x: -1, y: 0, z: 0}
-  moveSpeed: 0.3
+  moveSpeed: 0.2
   defaultFreezeDuration: 1
   isFrozen: 0
   slowFactor: 1
