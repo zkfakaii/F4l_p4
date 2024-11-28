@@ -20,11 +20,21 @@ public class MenuController : MonoBehaviour
         }
     }
 
+    // Método para cargar una escena específica por nombre
     public void LoadNextScene(string nextScene)
     {
-        SceneManager.LoadScene(nextScene);
+        // Validar si la escena existe antes de cargarla
+        if (SceneExists(nextScene))
+        {
+            SceneManager.LoadScene(nextScene);
+        }
+        else
+        {
+            Debug.LogWarning($"La escena {nextScene} no está configurada en el proyecto.");
+        }
     }
 
+    // Método para cargar la última escena jugada
     public void LoadLastScene()
     {
         // Recuperar la última escena almacenada
@@ -40,6 +50,38 @@ public class MenuController : MonoBehaviour
         }
     }
 
+    // Método para cargar el Nivel 1
+    public void LoadNivel1()
+    {
+        LoadNextScene("mapa 1");
+    }
+
+    // Método para cargar el Nivel 2
+    public void LoadNivel2()
+    {
+        LoadNextScene("mapa 2");
+    }
+
+    // Método para cargar el Nivel 3
+    public void LoadNivel3()
+    {
+        LoadNextScene("Nivel3");
+    }
+
+    // Método para cargar el Tutorial
+    public void LoadTutorial()
+    {
+        LoadNextScene("mapa tutorial");
+    }
+
+    // Método para verificar si la escena existe en el proyecto
+    private bool SceneExists(string sceneName)
+    {
+        int sceneIndex = SceneUtility.GetBuildIndexByScenePath("Assets/Scenes/" + sceneName + ".unity");
+        return sceneIndex != -1;
+    }
+
+    // Método para salir del juego
     public void QuitGame()
     {
         Application.Quit();

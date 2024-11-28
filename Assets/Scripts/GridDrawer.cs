@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DibujarGrilla : MonoBehaviour
+public class GridDrawer : MonoBehaviour
 {
     public int rows = 5;
     public int columns = 5;
