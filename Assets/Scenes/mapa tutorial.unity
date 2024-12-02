@@ -13346,6 +13346,26 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1180741226}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1138074780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1138074779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cb8ce441f46e964380ee9eadb9fd010, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mielPerTick: 5
+  tickInterval: 2
+  behaviorScript: {fileID: 0}
+  animator: {fileID: 1180741231}
+  stateTriggers:
+  - NormalMode
+  - GeneratingMode
+  - AerialMode
 --- !u!1001 &1175490097
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14008,6 +14028,22 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 81519582}
+    - targetCorrespondingSourceObject: {fileID: 8146897818489966115, guid: e1531cf5be3269443804b1a5164fd1e8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1536512506}
+    - targetCorrespondingSourceObject: {fileID: 5229855607842908179, guid: e1531cf5be3269443804b1a5164fd1e8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1717773022}
+    - targetCorrespondingSourceObject: {fileID: 7880466737301235317, guid: e1531cf5be3269443804b1a5164fd1e8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1180741235}
+    - targetCorrespondingSourceObject: {fileID: 1828935691061361272, guid: e1531cf5be3269443804b1a5164fd1e8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1138074780}
   m_SourcePrefab: {fileID: 100100000, guid: e1531cf5be3269443804b1a5164fd1e8, type: 3}
 --- !u!1 &1180741227 stripped
 GameObject:
@@ -14048,6 +14084,50 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1180741226}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1180741231 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7930083735349770952, guid: e1531cf5be3269443804b1a5164fd1e8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1180741226}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1180741232 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7628865626522119364, guid: e1531cf5be3269443804b1a5164fd1e8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1180741226}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1180741233 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7756119087990502321, guid: e1531cf5be3269443804b1a5164fd1e8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1180741226}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1180741234 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1454728911153742341, guid: e1531cf5be3269443804b1a5164fd1e8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1180741226}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1180741235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1180741230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cb8ce441f46e964380ee9eadb9fd010, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mielPerTick: 5
+  tickInterval: 2
+  behaviorScript: {fileID: 0}
+  animator: {fileID: 1180741232}
+  stateTriggers:
+  - NormalMode
+  - GeneratingMode
+  - AerialMode
 --- !u!1 &1208675907 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6565691826172689083, guid: e1531cf5be3269443804b1a5164fd1e8,
@@ -14535,6 +14615,26 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1180741226}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1536512506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536512505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cb8ce441f46e964380ee9eadb9fd010, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mielPerTick: 5
+  tickInterval: 2
+  behaviorScript: {fileID: 0}
+  animator: {fileID: 1180741234}
+  stateTriggers:
+  - NormalMode
+  - GeneratingMode
+  - AerialMode
 --- !u!1 &1553316004
 GameObject:
   m_ObjectHideFlags: 0
@@ -24359,6 +24459,26 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1180741226}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1717773022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1717773021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cb8ce441f46e964380ee9eadb9fd010, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mielPerTick: 5
+  tickInterval: 2
+  behaviorScript: {fileID: 0}
+  animator: {fileID: 1180741233}
+  stateTriggers:
+  - NormalMode
+  - GeneratingMode
+  - AerialMode
 --- !u!1 &1718362015
 GameObject:
   m_ObjectHideFlags: 0
