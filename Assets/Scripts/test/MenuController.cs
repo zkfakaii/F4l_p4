@@ -74,6 +74,32 @@ public class MenuController : MonoBehaviour
         LoadNextScene("mapa tutorial");
     }
 
+    // Método para cargar la escena de selección de niveles
+    public void LoadLevelSelection()
+    {
+        LoadNextScene("seleccion"); // Nombre de la escena de selección de niveles
+    }
+
+    // Método para cargar el nivel elegido desde la selección
+    public void LoadSelectedLevel(int levelIndex)
+    {
+        string levelName = GetLevelName(levelIndex);
+        LoadNextScene(levelName);
+    }
+
+    // Obtener el nombre del nivel basado en el índice
+    private string GetLevelName(int levelIndex)
+    {
+        switch (levelIndex)
+        {
+            case 1: return "mapa 1";
+            case 2: return "mapa 2";
+            case 3: return "Nivel3";
+            case 4: return "mapa tutorial";
+            default: return "mapa 1"; // Default en caso de que no se reciba un índice válido
+        }
+    }
+
     // Método para verificar si la escena existe en el proyecto
     private bool SceneExists(string sceneName)
     {

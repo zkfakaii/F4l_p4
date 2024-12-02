@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    public int maxHealth = 3; // Salud máxima del enemigo
+    public int maxHealth = 5; // Salud máxima del enemigo cambiada a 5
     private int currentHealth;
-   [HideInInspector] public  Transform target;
+    [HideInInspector] public Transform target;
 
     void Start()
     {
