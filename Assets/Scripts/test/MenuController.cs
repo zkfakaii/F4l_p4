@@ -61,7 +61,12 @@ public class MenuController : MonoBehaviour
     {
         LoadNextScene("mapa 2");
     }
+    public void LoadVideo()
+    {
+        LoadNextScene("video");
+    }
 
+    
     // Método para cargar el Nivel 3
     public void LoadNivel3()
     {

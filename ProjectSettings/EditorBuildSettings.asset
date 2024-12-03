@@ -12,8 +12,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: 1209c1ad6823e5a4c95931a3a36efb58
   - enabled: 1
-    path: Assets/Scenes/seleccion.unity
+    path: Assets/Scenes/video.unity
     guid: eb28a752baef0b4468bb1404086f3f3a
+  - enabled: 1
+    path: Assets/Scenes/seleccion.unity
+    guid: 6ab41ac2786daa544931aa30b6b649b3
   - enabled: 1
     path: Assets/Scenes/mapa tutorial.unity
     guid: 17c151f52a8a9e04a953ff2e3faaa283
