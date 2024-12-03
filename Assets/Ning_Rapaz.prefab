@@ -91,7 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5499a2b1b5e5712439a3d39615e6dde0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 120
+  maxHealth: 100
   triggersSceneTransition: 0
   targetSceneName: 
   blackScreen: {fileID: 0}
@@ -151,7 +151,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8399762110103597867}
   m_Layer: 12
-  m_Name: Ning_Hambriento
+  m_Name: Ning_Rapaz
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -247,7 +247,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 8225f3661d6316b4eb1b023eebbf738b, type: 3}
-  m_Color: {r: 0.6037736, g: 0.18136102, b: 0, a: 1}
+  m_Color: {r: 0.6039216, g: 0.41020766, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

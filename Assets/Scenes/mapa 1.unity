@@ -13713,6 +13713,11 @@ PrefabInstance:
       propertyPath: objetoAInstanciar
       value: 
       objectReference: {fileID: 99786159}
+    - target: {fileID: 2973056879553056817, guid: d3c0586bf00bc41428f738d460e09df0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: mapa 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3075796036695499953, guid: d3c0586bf00bc41428f738d460e09df0,
         type: 3}
       propertyPath: m_IsActive
