@@ -194,7 +194,7 @@ MonoBehaviour:
   normalLayer: Normal
   aerialLayer: Aerial
   generatingLayer: Generating
-  stateChangeDelay: 1
+  stateChangeDelay: 0
 --- !u!114 &3162111640603836402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,11 +241,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   normalProjectilePrefab: {fileID: 4271400705040235873, guid: ac528eba242028144a25c72b4375583b,
     type: 3}
-  aerialProjectilePrefab: {fileID: 4271400705040235873, guid: f3ddb9ff8f9b2aa4facf0b3c21fc7d2e,
+  aerialProjectilePrefab: {fileID: 4271400705040235873, guid: 795308da9c5b5fb4ea56ce3dd02b9eaf,
     type: 3}
   fireRate: 1
   fireDirection: {x: 1, y: 0, z: 0}
-  projectileDamage: 0
+  projectileDamage: 10
 --- !u!1 &7788661166843977990
 GameObject:
   m_ObjectHideFlags: 0

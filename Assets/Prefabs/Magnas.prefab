@@ -241,9 +241,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   normalProjectilePrefab: {fileID: 4271400705040235873, guid: ac528eba242028144a25c72b4375583b,
     type: 3}
-  aerialProjectilePrefab: {fileID: 4271400705040235873, guid: f3ddb9ff8f9b2aa4facf0b3c21fc7d2e,
+  aerialProjectilePrefab: {fileID: 4271400705040235873, guid: 795308da9c5b5fb4ea56ce3dd02b9eaf,
     type: 3}
-  fireRate: 1
+  fireRate: 0.8
   fireDirection: {x: 1, y: 0, z: 0}
   projectileDamage: 20
 --- !u!1 &7788661166843977990
@@ -273,7 +273,7 @@ Transform:
   m_GameObject: {fileID: 7788661166843977990}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.76, y: -0, z: 0}
+  m_LocalPosition: {x: -0.2, y: -0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
