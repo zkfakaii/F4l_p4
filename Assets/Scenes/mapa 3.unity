@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -25881,6 +25881,12 @@ PrefabInstance:
       propertyPath: maxMiel
       value: 1500
       objectReference: {fileID: 0}
+    - target: {fileID: 1770725170910258684, guid: 3ee00378e59369b46bf4ef7540eb5bb4,
+        type: 3}
+      propertyPath: objetoAInstanciar
+      value: 
+      objectReference: {fileID: 3724242290824817774, guid: 63c264d464aefd24bb41238221702317,
+        type: 3}
     - target: {fileID: 1792708551490011114, guid: 3ee00378e59369b46bf4ef7540eb5bb4,
         type: 3}
       propertyPath: m_IsActive
@@ -25916,6 +25922,12 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2305232629808827455, guid: 3ee00378e59369b46bf4ef7540eb5bb4,
+        type: 3}
+      propertyPath: objetoAInstanciar
+      value: 
+      objectReference: {fileID: 4638441969464658249, guid: d75ed968b50294841b9b3189eb5fa951,
+        type: 3}
     - target: {fileID: 4320715132153243458, guid: 3ee00378e59369b46bf4ef7540eb5bb4,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
@@ -25986,6 +25998,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7135965754416944998, guid: 3ee00378e59369b46bf4ef7540eb5bb4,
+        type: 3}
+      propertyPath: objetoAInstanciar
+      value: 
+      objectReference: {fileID: 5525499486168751971, guid: 63f9cd3aa554290429e286618eac0152,
+        type: 3}
+    - target: {fileID: 7295448793839012565, guid: 3ee00378e59369b46bf4ef7540eb5bb4,
+        type: 3}
+      propertyPath: objetoAInstanciar
+      value: 
+      objectReference: {fileID: 3880441497639456203, guid: 64cee49b3c03ccc4a82f82ba3d9c8592,
+        type: 3}
     - target: {fileID: 7963765304448535416, guid: 3ee00378e59369b46bf4ef7540eb5bb4,
         type: 3}
       propertyPath: m_Name
