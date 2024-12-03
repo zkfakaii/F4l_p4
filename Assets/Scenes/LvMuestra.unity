@@ -25814,12 +25814,17 @@ PrefabInstance:
     - target: {fileID: 3565661919872535021, guid: 5f0a1abbf443fde4b9e8f60ba5bb3f3a,
         type: 3}
       propertyPath: maxMiel
-      value: 1200
+      value: 3500
       objectReference: {fileID: 0}
     - target: {fileID: 3565661919872535021, guid: 5f0a1abbf443fde4b9e8f60ba5bb3f3a,
         type: 3}
       propertyPath: currentMiel
       value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 3565661919872535021, guid: 5f0a1abbf443fde4b9e8f60ba5bb3f3a,
+        type: 3}
+      propertyPath: regenerationRate
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4348608668068407029, guid: 5f0a1abbf443fde4b9e8f60ba5bb3f3a,
         type: 3}

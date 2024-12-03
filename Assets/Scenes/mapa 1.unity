@@ -13360,6 +13360,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -1470923509, guid: 421661cfc7152354682126bbfdc8bdac,
         type: 3}
+    - target: {fileID: 1347299714221696509, guid: d3c0586bf00bc41428f738d460e09df0,
+        type: 3}
+      propertyPath: maxMiel
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347299714221696509, guid: d3c0586bf00bc41428f738d460e09df0,
+        type: 3}
+      propertyPath: currentMiel
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347299714221696509, guid: d3c0586bf00bc41428f738d460e09df0,
+        type: 3}
+      propertyPath: regenerationRate
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1567752411109888491, guid: d3c0586bf00bc41428f738d460e09df0,
         type: 3}
       propertyPath: objetoAInstanciar

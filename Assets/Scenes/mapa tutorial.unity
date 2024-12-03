@@ -14013,6 +14013,11 @@ PrefabInstance:
       propertyPath: objetoAInstanciar
       value: 
       objectReference: {fileID: 1180741230}
+    - target: {fileID: 2861954800361512188, guid: e1531cf5be3269443804b1a5164fd1e8,
+        type: 3}
+      propertyPath: currentMiel
+      value: 700
+      objectReference: {fileID: 0}
     - target: {fileID: 2914444911595110436, guid: e1531cf5be3269443804b1a5164fd1e8,
         type: 3}
       propertyPath: m_Sprite
