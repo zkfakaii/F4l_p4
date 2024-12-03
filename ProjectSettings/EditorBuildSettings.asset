@@ -30,6 +30,9 @@ EditorBuildSettings:
     path: Assets/Scenes/mapa 2.unity
     guid: 45f264b39b637d64380254edcae4a271
   - enabled: 1
+    path: Assets/Scenes/Victoria.unity
+    guid: fc1768eaa8da4394f91cc91e99b35799
+  - enabled: 1
     path: Assets/Scenes/mapa 3.unity
     guid: dd33e2f49d8e46f4799d575976fd95b9
   - enabled: 1
