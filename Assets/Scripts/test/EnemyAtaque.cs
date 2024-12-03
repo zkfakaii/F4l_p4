@@ -40,7 +40,7 @@ public class EnemyAtaque : MonoBehaviour
         else
         {
             // Si no hay objetivo válido, detener el ataque y permitir movimiento
-            animator.SetBool("atacando", false);
+            if(animator) animator.SetBool("atacando", false);
 
             if (enemyWalk.isFrozen)
             {

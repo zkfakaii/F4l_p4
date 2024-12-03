@@ -506,7 +506,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 81519578}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 3d69f6faa1d90e1439cd1337b6d33f6e, type: 2}
   m_CullingMode: 0
@@ -14040,6 +14040,11 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3025612836801062465, guid: e1531cf5be3269443804b1a5164fd1e8,
+        type: 3}
+      propertyPath: posicionOffset.y
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 3084719337104083387, guid: e1531cf5be3269443804b1a5164fd1e8,
         type: 3}
       propertyPath: m_Sprite
@@ -14153,6 +14158,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5891000549270915099, guid: e1531cf5be3269443804b1a5164fd1e8,
+        type: 3}
+      propertyPath: waves.Array.data[0].spawnTime
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5891000549270915099, guid: e1531cf5be3269443804b1a5164fd1e8,
+        type: 3}
+      propertyPath: waves.Array.data[1].spawnTime
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 5891000549270915099, guid: e1531cf5be3269443804b1a5164fd1e8,
+        type: 3}
+      propertyPath: waves.Array.data[2].spawnTime
+      value: 45
+      objectReference: {fileID: 0}
     - target: {fileID: 6354316088718072538, guid: e1531cf5be3269443804b1a5164fd1e8,
         type: 3}
       propertyPath: m_Sprite
@@ -14208,7 +14228,7 @@ PrefabInstance:
     - target: {fileID: 6841521459957357135, guid: e1531cf5be3269443804b1a5164fd1e8,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6968505701105198153, guid: e1531cf5be3269443804b1a5164fd1e8,
         type: 3}
@@ -14309,7 +14329,7 @@ PrefabInstance:
     - target: {fileID: 7376959375173806026, guid: e1531cf5be3269443804b1a5164fd1e8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.522
+      value: 31.7
       objectReference: {fileID: 0}
     - target: {fileID: 8124301324834918849, guid: e1531cf5be3269443804b1a5164fd1e8,
         type: 3}

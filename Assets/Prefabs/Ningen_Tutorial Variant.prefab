@@ -21,7 +21,7 @@ PrefabInstance:
     - target: {fileID: 2785756879009510338, guid: d3326f53afd2a5e4494bf2cb67ea792d,
         type: 3}
       propertyPath: targetSceneName
-      value: Expedicion 1
+      value: mapa 1
       objectReference: {fileID: 0}
     - target: {fileID: 2785756879009510338, guid: d3326f53afd2a5e4494bf2cb67ea792d,
         type: 3}

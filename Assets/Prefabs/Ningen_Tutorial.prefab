@@ -115,7 +115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   triggersSceneTransition: 1
-  targetSceneName: Expedicion 1
+  targetSceneName: mapa 1
   blackScreen: {fileID: 5050178255466813190, guid: e7872a2e4c5ded6459628aeb4d8a858a,
     type: 3}
   transitionDuration: 3
