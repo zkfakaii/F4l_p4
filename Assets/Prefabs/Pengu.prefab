@@ -195,6 +195,7 @@ MonoBehaviour:
   aerialLayer: Aerial
   generatingLayer: Generating
   stateChangeDelay: 0
+  animator: {fileID: 3297316435370684877}
 --- !u!114 &3162111640603836402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,8 +209,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   honeyPerTick: 20
-  tickInterval: 5
-  maxHoney: 10000
+  tickInterval: 1
+  maxHoney: 2147483647
   globalMielSystem: {fileID: 0}
 --- !u!114 &2248522727393838682
 MonoBehaviour:
@@ -287,9 +288,9 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6279486384175621696}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e62fe9c1ff0e83a49b92d401465ead50, type: 2}
+  m_Controller: {fileID: 9100000, guid: 5c0449c07235afe4a808dc8c1649a4ed, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

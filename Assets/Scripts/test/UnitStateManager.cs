@@ -13,18 +13,13 @@ public class UnitStateManager : MonoBehaviour
     private string previousLayer; // Estado previo.
     private bool isChangingState = false; // Indica si ya se está procesando un cambio de estado.
 
-    private Animator animator; // Componente Animator del objeto.
+    
 
     private void Start()
     {
-        // Obtener el Animator automáticamente.
-        animator = GetComponentInChildren<Animator>();
+       
 
-        if (animator == null)
-        {
-            Debug.LogError("No se encontró el componente Animator en este objeto.");
-            return;
-        }
+        
 
         // Inicializa el estado inicial como "Normal".
         ChangeLayerImmediately(normalLayer);
@@ -104,44 +99,7 @@ public class UnitStateManager : MonoBehaviour
             child.gameObject.layer = layer;
         }
 
-        // Configurar el layer en el Animator si es necesario.
-        if (animator != null)
-        {
-            // Aquí configuramos la capa activa del Animator
-            switch (layerName)
-            {
-                case "Normal":
-                    animator.SetLayerWeight(animator.GetLayerIndex("Normal"), 1f);
-                    animator.SetLayerWeight(animator.GetLayerIndex("Generating"), 0f);
-                    animator.SetLayerWeight(animator.GetLayerIndex("Aerial"), 0f);
-                    animator.SetBool("NormalMode",true);
-                    animator.SetBool("GeneratingMode", false);
-                    animator.SetBool("AerialMode", false);
-                    break;
-
-                case "Aerial":
-                    animator.SetLayerWeight(animator.GetLayerIndex("Normal"), 0f);
-                    animator.SetLayerWeight(animator.GetLayerIndex("Generating"), 0f);
-                    animator.SetLayerWeight(animator.GetLayerIndex("Aerial"), 1f);
-                    animator.SetBool("NormalMode", false);
-                    animator.SetBool("GeneratingMode", false);
-                    animator.SetBool("AerialMode", true);
-                    break;
-
-                case "Generating":
-                    animator.SetLayerWeight(animator.GetLayerIndex("Normal"), 0f);
-                    animator.SetLayerWeight(animator.GetLayerIndex("Generating"), 1f);
-                    animator.SetLayerWeight(animator.GetLayerIndex("Aerial"), 0f);
-                    animator.SetBool("NormalMode", false);
-                    animator.SetBool("GeneratingMode", true);
-                    animator.SetBool("AerialMode", false);
-                    break;
-
-                default:
-                    Debug.LogWarning($"Capa desconocida: {layerName}");
-                    break;
-            }
-        }
+      
 
         currentLayer = layerName; // Actualiza el estado actual.
         Debug.Log($"Cambiado al estado: {currentLayer}");

@@ -530,6 +530,7 @@ MonoBehaviour:
   aerialLayer: Aerial
   generatingLayer: Generating
   stateChangeDelay: 1
+  animator: {fileID: 0}
 --- !u!1 &198248532
 GameObject:
   m_ObjectHideFlags: 0
@@ -2497,7 +2498,7 @@ PrefabInstance:
     - target: {fileID: 307750738926454314, guid: f0ec6c33a3c66bf43afa6e491899378c,
         type: 3}
       propertyPath: currentMiel
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 307750738926454314, guid: f0ec6c33a3c66bf43afa6e491899378c,
         type: 3}
@@ -3073,12 +3074,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1358852203}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &1358852209 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 6450819099635029503, guid: f0ec6c33a3c66bf43afa6e491899378c,
-    type: 3}
-  m_PrefabInstance: {fileID: 1358852203}
-  m_PrefabAsset: {fileID: 0}
 --- !u!95 &1358852210 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 203973963923254076, guid: f0ec6c33a3c66bf43afa6e491899378c,
@@ -3106,7 +3101,7 @@ MonoBehaviour:
   mielPerTick: 5
   tickInterval: 2
   behaviorScript: {fileID: 0}
-  animator: {fileID: 1358852209}
+  animator: {fileID: 0}
   stateTriggers:
   - NormalMode
   - GeneratingMode

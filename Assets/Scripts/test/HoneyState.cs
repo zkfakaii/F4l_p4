@@ -14,7 +14,19 @@ public class HoneyState : MonoBehaviour
 
     public Miel globalMielSystem;       // Referencia al sistema global de Miel
 
-  
+
+    void Start()
+    {
+        if (globalMielSystem == null)
+        {
+            globalMielSystem = FindObjectOfType<Miel>();
+
+            if (globalMielSystem == null)
+            {
+                Debug.LogError("No se encontró un sistema global de miel en la escena. Asegúrate de que exista un objeto con el script 'Miel'.");
+            }
+        }
+    }
 
     void Update()
     {

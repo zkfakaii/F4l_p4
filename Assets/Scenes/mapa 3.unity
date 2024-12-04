@@ -1145,7 +1145,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &779603210
 Transform:
   m_ObjectHideFlags: 0
@@ -2144,57 +2144,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1505975899
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1505975901}
-  - component: {fileID: 1505975902}
-  m_Layer: 0
-  m_Name: FogController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1505975901
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1505975899}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.395809, y: 3.76, z: 10.5232115}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1505975902
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1505975899}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6b5049b0c484f04f8b1df09218d1f42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fogParticles: {fileID: 0}
-  movementDirection: {x: 0.1, y: 0, z: 0}
-  speed: 1.03
-  gapChance: 0.2
-  minFogDensity: 2.59
-  maxFogDensity: 0.1
-  fogIntensitySpeed: 0.5
 --- !u!1 &1553911310
 GameObject:
   m_ObjectHideFlags: 0
@@ -7529,6 +7478,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3880441497639456203, guid: 64cee49b3c03ccc4a82f82ba3d9c8592,
         type: 3}
+    - target: {fileID: 7666697458002907725, guid: 3ee00378e59369b46bf4ef7540eb5bb4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7882673762125836830, guid: 3ee00378e59369b46bf4ef7540eb5bb4,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -7619,7 +7573,6 @@ SceneRoots:
   - {fileID: 958823531}
   - {fileID: 874177027}
   - {fileID: 1553911314}
-  - {fileID: 1505975901}
   - {fileID: 1746486566}
   - {fileID: 356459793}
   - {fileID: 998774597}
