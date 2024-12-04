@@ -8,19 +8,14 @@ public class UnitStateManager : MonoBehaviour
     [SerializeField] private string generatingLayer = "Generating";
 
     [SerializeField] private float stateChangeDelay = 1f; // Retraso en segundos antes de cambiar de estado.
+    [SerializeField] private Animator animator; // Referencia al Animator
 
     private string currentLayer;   // Estado actual.
     private string previousLayer; // Estado previo.
     private bool isChangingState = false; // Indica si ya se está procesando un cambio de estado.
 
-    
-
     private void Start()
     {
-       
-
-        
-
         // Inicializa el estado inicial como "Normal".
         ChangeLayerImmediately(normalLayer);
     }
@@ -60,10 +55,6 @@ public class UnitStateManager : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Cambia el estado después de un retraso.
-    /// </summary>
-    /// <param name="layerName">El nombre del layer al que cambiar.</param>
     private IEnumerator ChangeLayerWithDelay(string layerName)
     {
         isChangingState = true; // Marcar que se está procesando un cambio de estado.
@@ -76,10 +67,6 @@ public class UnitStateManager : MonoBehaviour
         isChangingState = false; // Permitir nuevos cambios de estado.
     }
 
-    /// <summary>
-    /// Cambia el layer del objeto inmediatamente.
-    /// </summary>
-    /// <param name="layerName">El nombre del layer al que cambiar.</param>
     private void ChangeLayerImmediately(string layerName)
     {
         int layer = LayerMask.NameToLayer(layerName);
@@ -99,9 +86,39 @@ public class UnitStateManager : MonoBehaviour
             child.gameObject.layer = layer;
         }
 
-      
-
         currentLayer = layerName; // Actualiza el estado actual.
+        UpdateAnimatorState(); // Actualiza las animaciones
         Debug.Log($"Cambiado al estado: {currentLayer}");
+    }
+
+    /// <summary>
+    /// Actualiza los parámetros del Animator en función del estado actual.
+    /// </summary>
+    private void UpdateAnimatorState()
+    {
+        if (animator == null)
+        {
+            Debug.LogWarning("No se ha asignado un Animator al UnitStateManager.");
+            return;
+        }
+
+        // Resetear todos los parámetros relacionados con los estados
+        animator.SetBool("IsNormal", false);
+        animator.SetBool("IsAerial", false);
+        animator.SetBool("IsGenerating", false);
+
+        // Activar el parámetro correspondiente al estado actual
+        if (currentLayer == normalLayer)
+        {
+            animator.SetBool("IsNormal", true);
+        }
+        else if (currentLayer == aerialLayer)
+        {
+            animator.SetBool("IsAerial", true);
+        }
+        else if (currentLayer == generatingLayer)
+        {
+            animator.SetBool("IsGenerating", true);
+        }
     }
 }

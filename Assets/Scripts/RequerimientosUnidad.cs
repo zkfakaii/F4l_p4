@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RequerimientosUnidad : MonoBehaviour
 {
-    public int costoUnidad = 25;          // Costo en Miel para invocar una unidad
+    public int costoUnidad = 0;          // Costo en Miel para invocar una unidad
     private Miel sistemaDeMiel;           // Referencia al script Miel
 
     void Awake()
