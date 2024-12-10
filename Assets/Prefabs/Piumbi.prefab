@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6925837028479648818}
   - component: {fileID: 330798629321973793}
-  - component: {fileID: 4962166370065351672}
   m_Layer: 7
   m_Name: GameObject
   m_TagString: Untagged
@@ -26,12 +25,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 789275567124094086}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0, z: -1.42}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5439448828241053679}
+  m_Father: {fileID: 5716852268627779630}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &330798629321973793
 SpriteRenderer:
@@ -85,27 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &4962166370065351672
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 789275567124094086}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e62fe9c1ff0e83a49b92d401465ead50, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4638441969464658249
 GameObject:
   m_ObjectHideFlags: 0
@@ -145,7 +123,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6547464703627370861}
-  - {fileID: 6925837028479648818}
+  - {fileID: 5716852268627779630}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 75, y: 0, z: 0}
 --- !u!212 &8443426914315302374
@@ -301,6 +279,7 @@ MonoBehaviour:
   aerialLayer: Aerial
   generatingLayer: Generating
   stateChangeDelay: 1
+  animator: {fileID: 324198302458036232}
 --- !u!114 &4940266253246901363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -352,6 +331,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 12288
   enemyTag: Enemy
+  animator: {fileID: 324198302458036232}
 --- !u!1 &5413265266550487499
 GameObject:
   m_ObjectHideFlags: 0
@@ -383,3 +363,57 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5439448828241053679}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1 &6154222150793426356
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5716852268627779630}
+  - component: {fileID: 324198302458036232}
+  m_Layer: 7
+  m_Name: pIUMBIroot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5716852268627779630
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6154222150793426356}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6925837028479648818}
+  m_Father: {fileID: 5439448828241053679}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &324198302458036232
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6154222150793426356}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 489e941c7912a5643b08a35919df0154, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

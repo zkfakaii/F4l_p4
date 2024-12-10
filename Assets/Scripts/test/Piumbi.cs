@@ -14,6 +14,9 @@ public class Piumbi : MonoBehaviour
     [SerializeField] private LayerMask enemyLayer; // Capas de los enemigos.
     [SerializeField] private string enemyTag = "Enemy"; // Tag de los enemigos.
 
+    [Header("Animator Settings")]
+    [SerializeField] private Animator animator; // Referencia al Animator
+
     private List<GameObject> enemiesInTrigger = new List<GameObject>(); // Lista de enemigos dentro del trigger.
 
     private Coroutine chargeRoutine;
@@ -27,9 +30,25 @@ public class Piumbi : MonoBehaviour
     private IEnumerator ChargeCoroutine()
     {
         Debug.Log($"{gameObject.name} está cargándose...");
+
+        // Activar animación de carga
+        if (animator != null)
+        {
+            animator.SetBool("IsCharging", true);
+        }
+
         yield return new WaitForSeconds(chargeTime);
+
         isCharged = true;
+
         Debug.Log($"{gameObject.name} está CARGADO y listo para explotar.");
+
+        // Cambiar a animación cargada
+        if (animator != null)
+        {
+            animator.SetBool("IsCharging", false);
+            animator.SetBool("IsCharged", true);
+        }
 
         // Verifica si hay enemigos dentro del trigger al completar la carga.
         if (enemiesInTrigger.Count > 0)
@@ -40,16 +59,13 @@ public class Piumbi : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // Verifica si el objeto tiene el tag correcto y puede interactuar con las físicas.
         if (other.CompareTag(enemyTag) && !Physics.GetIgnoreLayerCollision(gameObject.layer, other.gameObject.layer))
         {
-            // Agrega el enemigo a la lista si no está ya incluido.
             if (!enemiesInTrigger.Contains(other.gameObject))
             {
                 enemiesInTrigger.Add(other.gameObject);
             }
 
-            // Si ya está cargado, explota inmediatamente.
             if (isCharged)
             {
                 Explode();
@@ -59,7 +75,6 @@ public class Piumbi : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        // Remueve el enemigo de la lista al salir del trigger.
         if (enemiesInTrigger.Contains(other.gameObject))
         {
             enemiesInTrigger.Remove(other.gameObject);
@@ -70,12 +85,10 @@ public class Piumbi : MonoBehaviour
     {
         Debug.Log($"{gameObject.name} explota, causando daño en el área.");
 
-        // Encuentra todos los enemigos dentro del área de explosión.
         Collider[] enemiesInRange = Physics.OverlapBox(transform.position, explosionArea / 2, Quaternion.identity, enemyLayer);
 
         foreach (Collider enemy in enemiesInRange)
         {
-            // Verifica si el enemigo tiene el componente de vida y aplica daño.
             EnemigosHP enemyHP = enemy.GetComponent<EnemigosHP>();
             if (enemyHP != null)
             {
@@ -83,17 +96,24 @@ public class Piumbi : MonoBehaviour
             }
         }
 
-        // Destruye el objeto después de la explosión.
         Destroy(gameObject);
+    }
+
+    private void OnDestroy()
+    {
+        // Resetear animaciones al destruir el objeto
+        if (animator != null)
+        {
+            animator.SetBool("IsCharging", false);
+            animator.SetBool("IsCharged", false);
+        }
     }
 
     private void OnDrawGizmosSelected()
     {
-        // Dibuja el área de detección de la explosión.
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(transform.position, explosionArea);
 
-        // Cambia el color si está cargado.
         if (isCharged)
         {
             Gizmos.color = Color.yellow;
