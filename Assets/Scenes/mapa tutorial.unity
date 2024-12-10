@@ -4246,6 +4246,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3880441497639456203, guid: 64cee49b3c03ccc4a82f82ba3d9c8592,
         type: 3}
+    - target: {fileID: 6746286557257123520, guid: e1531cf5be3269443804b1a5164fd1e8,
+        type: 3}
+      propertyPath: requerimientosUnidad
+      value: 
+      objectReference: {fileID: 7712042173703761889, guid: 64cee49b3c03ccc4a82f82ba3d9c8592,
+        type: 3}
     - target: {fileID: 6841521459957357135, guid: e1531cf5be3269443804b1a5164fd1e8,
         type: 3}
       propertyPath: m_IsActive

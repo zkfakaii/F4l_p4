@@ -8,7 +8,7 @@ public class BotonInstanciador : MonoBehaviour
     public float tiempoCooldown = 5f;    // Tiempo de cooldown en segundos.
 
     private ColocadorObjetos colocadorObjetos;
-    private RequerimientosUnidad requerimientosUnidad;
+    public RequerimientosUnidad requerimientosUnidad;
     private bool enCooldown = false;
 
     void Start()
@@ -22,11 +22,11 @@ public class BotonInstanciador : MonoBehaviour
     void Awake()
     {
         colocadorObjetos = FindObjectOfType<ColocadorObjetos>();
-        requerimientosUnidad = FindObjectOfType<RequerimientosUnidad>();
     }
 
     void OnBotonClick()
     {
+        Miel sistemaDeMiel = FindObjectOfType<Miel>();
         if (enCooldown)
         {
             Debug.Log("Botón en cooldown. Espere antes de volver a usarlo.");
@@ -34,13 +34,13 @@ public class BotonInstanciador : MonoBehaviour
         }
 
         // Verificar si hay suficiente recurso para invocar la unidad.
-        if (requerimientosUnidad != null && requerimientosUnidad.TieneMielSuficiente())
+        if (requerimientosUnidad != null && requerimientosUnidad.costoUnidad <= sistemaDeMiel.currentMiel)
         {
             // Llama al método para iniciar la colocación del objeto.
             colocadorObjetos.SeleccionarObjeto(objetoAInstanciar);
 
             // Descontar los recursos después de invocar la unidad.
-            requerimientosUnidad.DescontarMiel();
+            sistemaDeMiel.currentMiel -= requerimientosUnidad.costoUnidad;
 
             // Inicia el cooldown.
             IniciarCooldown();
