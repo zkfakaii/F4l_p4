@@ -35,12 +35,15 @@ public class EnemyAtaque : MonoBehaviour
                 enemyWalk.FreezeMovement(); // Detener el movimiento del enemigo
             }
 
+            // Activar la animación de ataque
+            if (animator) animator.SetBool("atacando", true);
+
             ApplyDamageOverTime();
         }
         else
         {
             // Si no hay objetivo válido, detener el ataque y permitir movimiento
-            if(animator) animator.SetBool("atacando", false);
+            if (animator) animator.SetBool("atacando", false);
 
             if (enemyWalk.isFrozen)
             {

@@ -2206,12 +2206,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e832e07be23e794db0de636f18565d0, type: 3}
---- !u!95 &677626593 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 4962166370065351672, guid: d75ed968b50294841b9b3189eb5fa951,
-    type: 3}
-  m_PrefabInstance: {fileID: 1379007359}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &711038835
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5950,7 +5944,7 @@ MonoBehaviour:
   mielPerTick: 5
   tickInterval: 2
   behaviorScript: {fileID: 0}
-  animator: {fileID: 677626593}
+  animator: {fileID: 0}
   stateTriggers:
   - NormalMode
   - GeneratingMode
