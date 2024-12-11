@@ -17,11 +17,17 @@ PrefabInstance:
         type: 3}
       propertyPath: blackScreen
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 5050178255466813190, guid: e7872a2e4c5ded6459628aeb4d8a858a,
+        type: 3}
     - target: {fileID: 2785756879009510338, guid: d3326f53afd2a5e4494bf2cb67ea792d,
         type: 3}
       propertyPath: targetSceneName
       value: mapa 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2785756879009510338, guid: d3326f53afd2a5e4494bf2cb67ea792d,
+        type: 3}
+      propertyPath: transitionDelay
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2785756879009510338, guid: d3326f53afd2a5e4494bf2cb67ea792d,
         type: 3}
