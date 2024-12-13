@@ -139,7 +139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementDirection: {x: -1, y: 0, z: 0}
-  moveSpeed: 0.2
+  moveSpeed: 0.1
   defaultFreezeDuration: 1
   isFrozen: 0
   slowFactor: 1

@@ -139,7 +139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementDirection: {x: -1, y: 0, z: 0}
-  moveSpeed: 0.2
+  moveSpeed: 0.1
   defaultFreezeDuration: 1
   isFrozen: 0
   slowFactor: 1
@@ -272,8 +272,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4062521821849388122}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.27, y: -1.01, z: 0.52}
+  m_LocalRotation: {x: 0.72587144, y: -0, z: -0, w: 0.68783045}
+  m_LocalPosition: {x: 93.26314, y: 1.5584307, z: -8.409524}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

@@ -324,7 +324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eb6d1f9d3fd21144ac1157f496747c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chargeTime: 5
+  chargeTime: 10
   explosionArea: {x: 1, y: 0.5, z: 1}
   explosionDamage: 100000
   enemyLayer:

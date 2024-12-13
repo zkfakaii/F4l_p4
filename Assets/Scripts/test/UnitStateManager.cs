@@ -14,10 +14,11 @@ public class UnitStateManager : MonoBehaviour
 
     // Referencia al ColocadorObjetos
      private ColocadorObjetos colocadorObjetos;
-
+   
     private void Start()
     {
         ChangeLayerImmediately(normalLayer);
+        colocadorObjetos = FindAnyObjectByType<ColocadorObjetos>();
     }
 
     private void OnMouseOver()
@@ -27,7 +28,7 @@ public class UnitStateManager : MonoBehaviour
 
         if (isChangingState) return;
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0)&& !colocadorObjetos.selected)
         {
             if (currentLayer == normalLayer)
             {
@@ -42,7 +43,7 @@ public class UnitStateManager : MonoBehaviour
                 StartCoroutine(ChangeLayerWithDelay(normalLayer));
             }
         }
-        else if (Input.GetMouseButtonDown(1))
+        else if (Input.GetMouseButtonDown(1)&&!colocadorObjetos.selected)
         {
             if (currentLayer == aerialLayer)
             {

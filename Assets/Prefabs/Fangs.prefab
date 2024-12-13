@@ -328,10 +328,10 @@ MonoBehaviour:
   detectionBoxSize: {x: 1.19, y: 0.55, z: 1}
   enemyLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 12288
   enemyTag: Enemy
-  damagePerTick: 5
-  tickInterval: 2
+  damagePerTick: 20
+  tickInterval: 1.5
 --- !u!1 &4836236357960923110
 GameObject:
   m_ObjectHideFlags: 0

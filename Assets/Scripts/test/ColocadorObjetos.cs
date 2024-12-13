@@ -12,11 +12,14 @@ public class ColocadorObjetos : MonoBehaviour
     private bool unidadColocada = false;
 
     public bool UnidadColocada => unidadColocada;
+    public bool selected;
 
     void Update()
     {
+        
         if (objetoSeleccionado != null)
         {
+            selected = true;
             Vector3 posicionMouse = ObtenerPosicionMouse();
             if (posicionMouse != Vector3.zero)
             {
@@ -38,6 +41,7 @@ public class ColocadorObjetos : MonoBehaviour
 
     private void ColocarObjeto(Vector3 posicion)
     {
+        selected = false;
         objetoSeleccionado.transform.position = posicion;
         objetoSeleccionado = null;
         unidadColocada = true; // Marca que la unidad ha sido colocada

@@ -335,6 +335,8 @@ MonoBehaviour:
   generatingLayer: Generating
   stateChangeDelay: 1
   animator: {fileID: 2619448333072900719}
+  colocadorObjetos: {fileID: 3915135676245486758, guid: 6fb0d10193851924cbfa7280e84d56f4,
+    type: 3}
 --- !u!114 &829031116511679380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -407,6 +409,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 12288
   enemyTag: Enemy
+  animator: {fileID: 0}
 --- !u!114 &965766189863730796
 MonoBehaviour:
   m_ObjectHideFlags: 0
