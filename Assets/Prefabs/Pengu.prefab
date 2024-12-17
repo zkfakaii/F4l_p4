@@ -116,7 +116,7 @@ CapsuleCollider:
   m_Radius: 3.915
   m_Height: 6.74
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 4}
+  m_Center: {x: 0, y: 0, z: -0.5}
 --- !u!54 &5810599035403688781
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -209,7 +209,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   honeyPerTick: 20
-  tickInterval: 1
+  tickInterval: 2
   maxHoney: 2147483647
   globalMielSystem: {fileID: 0}
 --- !u!114 &2248522727393838682

@@ -255,7 +255,7 @@ CapsuleCollider:
   m_Radius: 3.915
   m_Height: 6.74
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 4}
+  m_Center: {x: 0, y: 0, z: -2.13}
 --- !u!54 &4447137506083611028
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -335,8 +335,6 @@ MonoBehaviour:
   generatingLayer: Generating
   stateChangeDelay: 1
   animator: {fileID: 2619448333072900719}
-  colocadorObjetos: {fileID: 3915135676245486758, guid: 6fb0d10193851924cbfa7280e84d56f4,
-    type: 3}
 --- !u!114 &829031116511679380
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -201,7 +201,7 @@ CapsuleCollider:
   m_Radius: 3.915
   m_Height: 6.74
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 4}
+  m_Center: {x: 0, y: 0, z: -1.7}
 --- !u!54 &2232465051190827289
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -263,7 +263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b71fb88e854bcd478a97d75c04ba018, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  costoUnidad: 250
+  costoUnidad: 200
 --- !u!114 &5941720238212333602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293,8 +293,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6089e9837d432514584db8fc71ed3159, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  honeyPerTick: 30
-  tickInterval: 7
+  honeyPerTick: 50
+  tickInterval: 5
   maxHoney: 50000
   globalMielSystem: {fileID: 0}
 --- !u!114 &7103323794665843579
@@ -325,13 +325,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33f44f21cfcf9704c81a1cc823d6960b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectionBoxSize: {x: 1.19, y: 0.55, z: 1}
+  detectionBoxSize: {x: 2.7, y: 0.55, z: 0.53}
   enemyLayer:
     serializedVersion: 2
     m_Bits: 12288
   enemyTag: Enemy
   damagePerTick: 20
-  tickInterval: 1.5
+  tickInterval: 3
 --- !u!1 &4836236357960923110
 GameObject:
   m_ObjectHideFlags: 0
