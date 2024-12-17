@@ -183,7 +183,7 @@ MonoBehaviour:
   blackScreen: {fileID: 5050178255466813190, guid: e7872a2e4c5ded6459628aeb4d8a858a,
     type: 3}
   transitionDuration: 3
-  transitionDelay: 2
+  transitionDelay: 4
 --- !u!54 &9178215619546005602
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -224,7 +224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementDirection: {x: -1, y: 0, z: 0}
-  moveSpeed: 0.2
+  moveSpeed: 0.08
   defaultFreezeDuration: 1
   isFrozen: 0
   slowFactor: 1
