@@ -23,6 +23,7 @@ public class MenuController : MonoBehaviour
     // Método para cargar una escena específica por nombre
     public void LoadNextScene(string nextScene)
     {
+        Time.timeScale = 1;
         // Validar si la escena existe antes de cargarla
         if (SceneExists(nextScene))
         {
