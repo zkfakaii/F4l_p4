@@ -248,7 +248,7 @@ MonoBehaviour:
   normalLayer: Normal
   aerialLayer: Aerial
   generatingLayer: Generating
-  stateChangeDelay: 0
+  stateChangeDelay: 0.5
   animator: {fileID: 1122328740993875746}
 --- !u!114 &3162111640603836402
 MonoBehaviour:
@@ -278,7 +278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e18b1a174d2594049a36759588a7fdbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10000
+  maxHealth: 160
   normalLayer: Normal
   aerialLayer: Aerial
   generatingLayer: Generating

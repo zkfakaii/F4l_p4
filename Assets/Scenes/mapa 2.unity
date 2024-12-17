@@ -4807,8 +4807,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Leus
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: bec6d52525f72f343963e9c451845d24, type: 2}
-  m_sharedMaterial: {fileID: 911262730950858512, guid: bec6d52525f72f343963e9c451845d24,
+  m_fontAsset: {fileID: 11400000, guid: 2d0f0872298af714daac380fd5c1b84f, type: 2}
+  m_sharedMaterial: {fileID: 911262730950858512, guid: 2d0f0872298af714daac380fd5c1b84f,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -10996,8 +10996,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: bec6d52525f72f343963e9c451845d24, type: 2}
-  m_sharedMaterial: {fileID: 911262730950858512, guid: bec6d52525f72f343963e9c451845d24,
+  m_fontAsset: {fileID: 11400000, guid: 2d0f0872298af714daac380fd5c1b84f, type: 2}
+  m_sharedMaterial: {fileID: 911262730950858512, guid: 2d0f0872298af714daac380fd5c1b84f,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}

@@ -317,7 +317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b71fb88e854bcd478a97d75c04ba018, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  costoUnidad: 200
+  costoUnidad: 180
 --- !u!114 &9045108357377254764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -333,7 +333,7 @@ MonoBehaviour:
   normalLayer: Normal
   aerialLayer: Aerial
   generatingLayer: Generating
-  stateChangeDelay: 1
+  stateChangeDelay: 0.5
   animator: {fileID: 2619448333072900719}
 --- !u!114 &829031116511679380
 MonoBehaviour:
@@ -348,7 +348,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   honeyPerTick: 30
-  tickInterval: 5
+  tickInterval: 3
   maxHoney: 50000
   globalMielSystem: {fileID: 0}
 --- !u!114 &4599236213373963876
@@ -363,7 +363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e18b1a174d2594049a36759588a7fdbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10000
+  maxHealth: 100
   normalLayer: Normal
   aerialLayer: Aerial
   generatingLayer: Generating
@@ -387,7 +387,7 @@ MonoBehaviour:
   fireDirection: {x: 1, y: 0, z: 0}
   projectileDamage: 10
   freezeDuration: 2
-  freezeProbability: 1
+  freezeProbability: 0.3
 --- !u!114 &5983364550865108464
 MonoBehaviour:
   m_ObjectHideFlags: 0
