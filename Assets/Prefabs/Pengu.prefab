@@ -194,7 +194,7 @@ MonoBehaviour:
   normalLayer: Normal
   aerialLayer: Aerial
   generatingLayer: Generating
-  stateChangeDelay: 0
+  stateChangeDelay: 0.5
   animator: {fileID: 3297316435370684877}
 --- !u!114 &3162111640603836402
 MonoBehaviour:
