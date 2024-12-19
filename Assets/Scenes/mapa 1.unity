@@ -12471,42 +12471,42 @@ MonoBehaviour:
     prefabs:
     - {fileID: 4062521821849388122, guid: 8cafe6fc57f2d784ca40b9a56d620564, type: 3}
     quantities: 02000000
-    spawnTime: 40
+    spawnTime: 50
   - waveName: third
     prefabs:
     - {fileID: 4062521821849388122, guid: 8cafe6fc57f2d784ca40b9a56d620564, type: 3}
     quantities: 010000000100000001000000
-    spawnTime: 55
+    spawnTime: 65
   - waveName: fourth
     prefabs:
     - {fileID: 4062521821849388122, guid: 8cafe6fc57f2d784ca40b9a56d620564, type: 3}
     quantities: 02000000
-    spawnTime: 70
+    spawnTime: 80
   - waveName: fifth
     prefabs:
     - {fileID: 4062521821849388122, guid: 8cafe6fc57f2d784ca40b9a56d620564, type: 3}
     quantities: 02000000
-    spawnTime: 85
+    spawnTime: 95
   - waveName: sixth
     prefabs:
     - {fileID: 4062521821849388122, guid: 8cafe6fc57f2d784ca40b9a56d620564, type: 3}
     quantities: 03000000
-    spawnTime: 95
+    spawnTime: 105
   - waveName: seventh
     prefabs:
     - {fileID: 4062521821849388122, guid: 8cafe6fc57f2d784ca40b9a56d620564, type: 3}
     quantities: 05000000
-    spawnTime: 110
+    spawnTime: 115
   - waveName: eight
     prefabs:
     - {fileID: 4062521821849388122, guid: 8cafe6fc57f2d784ca40b9a56d620564, type: 3}
     quantities: 04000000
-    spawnTime: 130
+    spawnTime: 150
   - waveName: eight
     prefabs:
     - {fileID: 4062521821849388122, guid: 8cafe6fc57f2d784ca40b9a56d620564, type: 3}
     quantities: 04000000
-    spawnTime: 133
+    spawnTime: 165
   spawnPoints:
   - {fileID: 2543796158025183187}
   - {fileID: 3639198046204622035}

@@ -414,7 +414,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e18b1a174d2594049a36759588a7fdbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 150
+  maxHealth: 300
   normalLayer: Normal
   aerialLayer: Aerial
   generatingLayer: Generating

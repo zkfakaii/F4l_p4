@@ -15552,117 +15552,117 @@ MonoBehaviour:
     prefabs:
     - {fileID: 4062521821849388122, guid: 9eebde78b1ed27748ba9e494e0160437, type: 3}
     quantities: 01000000
-    spawnTime: 50
+    spawnTime: 60
   - waveName: third
     prefabs:
     - {fileID: 4062521821849388122, guid: 8cafe6fc57f2d784ca40b9a56d620564, type: 3}
     quantities: 02000000
-    spawnTime: 60
+    spawnTime: 70
   - waveName: fourth
     prefabs:
     - {fileID: 4062521821849388122, guid: 9eebde78b1ed27748ba9e494e0160437, type: 3}
     - {fileID: 4062521821849388122, guid: 8cafe6fc57f2d784ca40b9a56d620564, type: 3}
     quantities: 0100000002000000
-    spawnTime: 70
+    spawnTime: 85
   - waveName: fifth
     prefabs:
     - {fileID: 4062521821849388122, guid: 9eebde78b1ed27748ba9e494e0160437, type: 3}
     - {fileID: 4062521821849388122, guid: 8cafe6fc57f2d784ca40b9a56d620564, type: 3}
     quantities: 0100000001000000
-    spawnTime: 85
+    spawnTime: 100
   - waveName: fifthB
     prefabs:
     - {fileID: 4062521821849388122, guid: 8cafe6fc57f2d784ca40b9a56d620564, type: 3}
     quantities: 02000000
-    spawnTime: 87
+    spawnTime: 105
   - waveName: sixth
     prefabs:
     - {fileID: 4062521821849388122, guid: 9eebde78b1ed27748ba9e494e0160437, type: 3}
     quantities: 01000000
-    spawnTime: 95
+    spawnTime: 120
   - waveName: sixth B
     prefabs:
     - {fileID: 4062521821849388122, guid: 9eebde78b1ed27748ba9e494e0160437, type: 3}
     quantities: 01000000
-    spawnTime: 96
+    spawnTime: 125
   - waveName: sixth c
     prefabs:
     - {fileID: 4062521821849388122, guid: 9eebde78b1ed27748ba9e494e0160437, type: 3}
     quantities: 01000000
-    spawnTime: 98
+    spawnTime: 130
   - waveName: 'seventh '
     prefabs:
     - {fileID: 4062521821849388122, guid: 8cafe6fc57f2d784ca40b9a56d620564, type: 3}
     quantities: 02000000
-    spawnTime: 105
+    spawnTime: 140
   - waveName: seventh B
     prefabs:
     - {fileID: 4062521821849388122, guid: 8cafe6fc57f2d784ca40b9a56d620564, type: 3}
     quantities: 01000000
-    spawnTime: 107
+    spawnTime: 145
   - waveName: eighth
     prefabs:
     - {fileID: 4062521821849388122, guid: 9eebde78b1ed27748ba9e494e0160437, type: 3}
     quantities: 02000000
-    spawnTime: 110
+    spawnTime: 160
   - waveName: eighth B
     prefabs:
     - {fileID: 4062521821849388122, guid: 8cafe6fc57f2d784ca40b9a56d620564, type: 3}
     quantities: 02000000
-    spawnTime: 112
+    spawnTime: 164
   - waveName: Ninth
     prefabs:
     - {fileID: 4062521821849388122, guid: 8cafe6fc57f2d784ca40b9a56d620564, type: 3}
     - {fileID: 4062521821849388122, guid: 9eebde78b1ed27748ba9e494e0160437, type: 3}
     quantities: 0100000001000000
-    spawnTime: 120
+    spawnTime: 180
   - waveName: Ninth B
     prefabs:
     - {fileID: 4062521821849388122, guid: 8cafe6fc57f2d784ca40b9a56d620564, type: 3}
     - {fileID: 4062521821849388122, guid: 9eebde78b1ed27748ba9e494e0160437, type: 3}
     quantities: 0100000001000000
-    spawnTime: 122
+    spawnTime: 185
   - waveName: Ninth C
     prefabs:
     - {fileID: 4062521821849388122, guid: 8cafe6fc57f2d784ca40b9a56d620564, type: 3}
     - {fileID: 4062521821849388122, guid: 9eebde78b1ed27748ba9e494e0160437, type: 3}
     quantities: 0000000001000000
-    spawnTime: 125
+    spawnTime: 187
   - waveName: Ninth D
     prefabs:
     - {fileID: 4062521821849388122, guid: 8cafe6fc57f2d784ca40b9a56d620564, type: 3}
     quantities: 02000000
-    spawnTime: 125
+    spawnTime: 190
   - waveName: Tenth (Deadline)
     prefabs:
     - {fileID: 4062521821849388122, guid: 8cafe6fc57f2d784ca40b9a56d620564, type: 3}
     quantities: 03000000
-    spawnTime: 140
+    spawnTime: 220
   - waveName: Tenth B (Deadline)
     prefabs:
     - {fileID: 4062521821849388122, guid: 8cafe6fc57f2d784ca40b9a56d620564, type: 3}
     quantities: 03000000
-    spawnTime: 142
+    spawnTime: 222
   - waveName: Tenth C (Deadline)
     prefabs:
     - {fileID: 4062521821849388122, guid: 8cafe6fc57f2d784ca40b9a56d620564, type: 3}
     quantities: 03000000
-    spawnTime: 144
+    spawnTime: 225
   - waveName: Tenth D (Deadline)
     prefabs:
     - {fileID: 4062521821849388122, guid: 8cafe6fc57f2d784ca40b9a56d620564, type: 3}
     quantities: 06000000
-    spawnTime: 146
+    spawnTime: 230
   - waveName: Tenth E (Deadline)
     prefabs:
     - {fileID: 4062521821849388122, guid: 8cafe6fc57f2d784ca40b9a56d620564, type: 3}
     quantities: 06000000
-    spawnTime: 148
+    spawnTime: 235
   - waveName: Tenth F (Deadline)
     prefabs:
     - {fileID: 4062521821849388122, guid: 8cafe6fc57f2d784ca40b9a56d620564, type: 3}
     quantities: 06000000
-    spawnTime: 150
+    spawnTime: 240
   spawnPoints:
   - {fileID: 1054594632768720479}
   - {fileID: 5028791009958286719}
